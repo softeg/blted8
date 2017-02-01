@@ -6,7 +6,7 @@ project:
     name: lightning
   local:
     protocol: http
-    hostname: 'local.${project.machine_name}.com'
+    hostname: '127.0.0.1:8888'
 git:
   default_branch: master
   remotes:
@@ -48,3 +48,4 @@ modules:
   prod:
     enable: [acquia_connector, shield]
     uninstall: [devel, views_ui]
+
