@@ -2,15 +2,13 @@
 
 namespace Drupal\metatag\Generator;
 
-use Drupal\Console\Core\Generator\Generator;
+use Drupal\Console\Generator\Generator;
 use Drupal\Console\Extension\Manager;
-use Drupal\Console\Core\Utils\TwigRenderer;
+use Drupal\Console\Utils\TwigRenderer;
 
 class MetatagGroupGenerator extends Generator {
 
-  /**
-   * @var Manager
-   */
+  /** @var Manager  */
   protected $extensionManager;
 
   /**
@@ -23,7 +21,10 @@ class MetatagGroupGenerator extends Generator {
    *
    * @param Manager $extensionManager
    */
-  public function __construct(Manager $extensionManager, TwigRenderer $render) {
+  public function __construct(
+      Manager $extensionManager,
+      TwigRenderer $render
+    ) {
     $this->extensionManager = $extensionManager;
 
     $render->addSkeletonDir(__DIR__ . '/../../templates/');

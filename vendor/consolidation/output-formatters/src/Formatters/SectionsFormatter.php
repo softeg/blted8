@@ -10,7 +10,7 @@ use Consolidation\OutputFormatters\Validate\ValidDataTypesTrait;
 use Consolidation\OutputFormatters\StructuredData\TableDataInterface;
 use Consolidation\OutputFormatters\Transformations\ReorderFields;
 use Consolidation\OutputFormatters\Exception\IncompatibleDataException;
-use Consolidation\OutputFormatters\StructuredData\PropertyList;
+use Consolidation\OutputFormatters\StructuredData\AssociativeList;
 
 /**
  * Display sections of data.
@@ -39,7 +39,7 @@ class SectionsFormatter implements FormatterInterface, ValidDataTypesInterface, 
     public function validate($structuredData)
     {
         // If the provided data was of class RowsOfFields
-        // or PropertyList, it will be converted into
+        // or AssociativeList, it will be converted into
         // a TableTransformation object by the restructure call.
         if (!$structuredData instanceof TableDataInterface) {
             throw new IncompatibleDataException(
@@ -62,7 +62,7 @@ class SectionsFormatter implements FormatterInterface, ValidDataTypesInterface, 
             $rowLabel = $tableTransformer->getRowLabel($rowid);
             $output->writeln('');
             $output->writeln($rowLabel);
-            $sectionData = new PropertyList($row);
+            $sectionData = new AssociativeList($row);
             $sectionOptions = new FormatterOptions([], $options->getOptions());
             $sectionTableTransformer = $sectionData->restructure($sectionOptions);
             $table->setRows($sectionTableTransformer->getTableData(true));

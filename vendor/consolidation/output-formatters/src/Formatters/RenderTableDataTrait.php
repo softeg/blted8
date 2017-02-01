@@ -21,7 +21,7 @@ trait RenderTableDataTrait
     {
         foreach ($restructuredData as $id => $row) {
             foreach ($row as $key => $cellData) {
-                $restructuredData[$id][$key] = $originalData->renderCell($key, $cellData, $options, $row);
+                $restructuredData[$id][$key] = $originalData->renderCell($key, $cellData, $options);
             }
         }
         return $restructuredData;

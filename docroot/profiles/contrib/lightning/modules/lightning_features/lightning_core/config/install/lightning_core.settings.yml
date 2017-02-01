@@ -1,7 +1,7 @@
 content_roles:
   creator:
     enabled: true
-    label: '? creator'
+    label: '? Creator'
     permissions:
       - 'create ? content'
       - 'edit own ? content'
@@ -10,8 +10,7 @@ content_roles:
       - 'create url aliases'
   reviewer:
     enabled: true
-    label: '? reviewer'
+    label: '? Reviewer'
     permissions:
-      - 'access content overview'
       - 'edit any ? content'
       - 'delete any ? content'

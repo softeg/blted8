@@ -19,10 +19,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
-use Consolidation\TestUtils\ApplicationWithTerminalWidth;
-use Consolidation\AnnotatedCommand\Options\PrepareTerminalWidthOption;
-use Consolidation\AnnotatedCommand\Events\CustomEventAwareInterface;
-use Consolidation\AnnotatedCommand\Events\CustomEventAwareTrait;
 
 /**
  * Do a test of all of the classes in this project, top-to-bottom.
@@ -33,7 +29,7 @@ class FullStackTests extends \PHPUnit_Framework_TestCase
     protected $commandFactory;
 
     function setup() {
-        $this->application = new ApplicationWithTerminalWidth('TestApplication', '0.0.0');
+        $this->application = new Application('TestApplication', '0.0.0');
         $this->commandFactory = new AnnotatedCommandFactory();
         $alterOptionsEventManager = new AlterOptionsCommandEvent($this->application);
         $eventDispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
@@ -48,7 +44,7 @@ class FullStackTests extends \PHPUnit_Framework_TestCase
         $formatter = new FormatterManager();
         $formatter->addDefaultFormatters();
         $formatter->addDefaultSimplifiers();
-        $commandInfo = CommandInfo::create('\Consolidation\TestUtils\alpha\AlphaCommandFile', 'exampleTable');
+        $commandInfo = new CommandInfo('\Consolidation\TestUtils\alpha\AlphaCommandFile', 'exampleTable');
         $this->assertEquals('example:table', $commandInfo->getName());
         $this->assertEquals('\Consolidation\OutputFormatters\StructuredData\RowsOfFields', $commandInfo->getReturnType());
     }
@@ -93,22 +89,16 @@ class FullStackTests extends \PHPUnit_Framework_TestCase
         $formatter->addDefaultFormatters();
         $formatter->addDefaultSimplifiers();
         $hookManager = new HookManager();
-        $terminalWidthOption = new PrepareTerminalWidthOption();
-        $terminalWidthOption->setApplication($this->application);
         $commandProcessor = new CommandProcessor($hookManager);
         $commandProcessor->setFormatterManager($formatter);
-        $commandProcessor->addPrepareFormatter($terminalWidthOption);
 
         // Create a new factory, and load all of the files
-        // discovered above.
+        // discovered above.  The command factory class is
+        // tested in isolation in testAnnotatedCommandFactory.php,
+        // but this is the only place where
         $factory = new AnnotatedCommandFactory();
         $factory->setCommandProcessor($commandProcessor);
-        // Add a listener to configure our command handler object
-        $factory->addListernerCallback(function($command) use($hookManager) {
-            if ($command instanceof CustomEventAwareInterface) {
-                $command->setHookManager($hookManager);
-            }
-        } );
+        // $factory->addListener(...);
         $factory->setIncludeAllPublicMethods(false);
         $this->addDiscoveredCommands($factory, $commandFiles);
 
@@ -116,12 +106,6 @@ class FullStackTests extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($this->application->has('example:table'));
         $this->assertFalse($this->application->has('without:annotations'));
-
-        // Run the use:event command that defines a custom event, my-event.
-        $this->assertRunCommandViaApplicationEquals('use:event', 'one,two');
-        // Watch as we dynamically add a custom event to the hook manager to change the command results:
-        $hookManager->add(function () { return 'three'; }, HookManager::ON_EVENT, 'my-event');
-        $this->assertRunCommandViaApplicationEquals('use:event', 'one,three,two');
 
         // Fetch a reference to the 'example:table' command and test its valid format types
         $exampleTableCommand = $this->application->find('example:table');
@@ -230,40 +214,6 @@ EOT;
 
         $this->assertRunCommandViaApplicationEquals('get:serious', 'very serious');
         $this->assertRunCommandViaApplicationContains('get:lost', 'Command "get:lost" is not defined.', [], 1);
-
-        $this->assertRunCommandViaApplicationContains('help example:wrap',
-            [
-                'Test word wrapping',
-                '[default: "table"]',
-            ]
-        );
-
-        $expectedUnwrappedOutput = <<<EOT
--------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------
-  First                                                                                                                      Second
- -------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------
-  This is a really long cell that contains a lot of data. When it is rendered, it should be wrapped across multiple lines.   This is the second column of the same table. It is also very long, and should be wrapped across multiple lines, just like the first column.
- -------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------
-EOT;
-        $this->application->setWidthAndHeight(0, 0);
-        $this->assertRunCommandViaApplicationEquals('example:wrap', $expectedUnwrappedOutput);
-
-        $expectedWrappedOutput = <<<EOT
- ------------------- --------------------
-  First               Second
- ------------------- --------------------
-  This is a really    This is the second
-  long cell that      column of the same
-  contains a lot of   table. It is also
-  data. When it is    very long, and
-  rendered, it        should be wrapped
-  should be wrapped   across multiple
-  across multiple     lines, just like
-  lines.              the first column.
- ------------------- --------------------
-EOT;
-        $this->application->setWidthAndHeight(42, 24);
-        $this->assertRunCommandViaApplicationEquals('example:wrap', $expectedWrappedOutput);
     }
 
     function testCommandsAndHooksIncludeAllPublicMethods()
@@ -344,7 +294,7 @@ EOT;
         $allRegisteredHooks = $hookManager->getAllHooks();
         $registeredHookNames = array_keys($allRegisteredHooks);
         sort($registeredHookNames);
-        $this->assertEquals('*,example:table,my-event', implode(',', $registeredHookNames));
+        $this->assertEquals('*,example:table', implode(',', $registeredHookNames));
         $allHooksForExampleTable = $allRegisteredHooks['example:table'];
         $allHookPhasesForExampleTable = array_keys($allHooksForExampleTable);
         sort($allHookPhasesForExampleTable);

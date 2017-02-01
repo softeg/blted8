@@ -47,25 +47,19 @@ class Video extends FormatterBase implements ContainerFactoryPluginInterface {
     foreach ($items as $delta => $item) {
       $provider = $this->providerManager->loadProviderFromInput($item->value);
 
-      if (!$provider) {
-        $element[$delta] = ['#theme' => 'video_embed_field_missing_provider'];
-      }
-      else {
-        $autoplay = $this->currentUser->hasPermission('never autoplay videos') ? FALSE : $this->getSetting('autoplay');
-        $element[$delta] = $provider->renderEmbedCode($this->getSetting('width'), $this->getSetting('height'), $autoplay);
-        $element[$delta]['#cache']['contexts'][] = 'user.permissions';
+      $autoplay = $this->currentUser->hasPermission('never autoplay videos') ? FALSE : $this->getSetting('autoplay');
+      $element[$delta] = $provider->renderEmbedCode($this->getSetting('width'), $this->getSetting('height'), $autoplay);
+      $element[$delta]['#cache']['contexts'][] = 'user.permissions';
 
-        // For responsive videos, wrap each field item in it's own container.
-        if ($this->getSetting('responsive')) {
-          $element[$delta] = [
-            '#type' => 'container',
-            '#attached' => ['library' => ['video_embed_field/responsive-video']],
-            '#attributes' => ['class' => ['video-embed-field-responsive-video']],
-            'children' => $element[$delta],
-          ];
-        }
+      // For responsive videos, wrap each field item in it's own container.
+      if ($this->getSetting('responsive')) {
+        $element[$delta] = [
+          '#type' => 'container',
+          '#attached' => ['library' => ['video_embed_field/responsive-video']],
+          '#attributes' => ['class' => ['video-embed-field-responsive-video']],
+          'children' => $element[$delta],
+        ];
       }
-
     }
     return $element;
   }
@@ -88,13 +82,13 @@ class Video extends FormatterBase implements ContainerFactoryPluginInterface {
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $elements = parent::settingsForm($form, $form_state);
     $elements['autoplay'] = [
-      '#title' => $this->t('Autoplay'),
+      '#title' => t('Autoplay'),
       '#type' => 'checkbox',
       '#description' => $this->t('Autoplay the videos for users without the "never autoplay videos" permission. Roles with this permission will bypass this setting.'),
       '#default_value' => $this->getSetting('autoplay'),
     ];
     $elements['responsive'] = [
-      '#title' => $this->t('Responsive Video'),
+      '#title' => t('Responsive Video'),
       '#type' => 'checkbox',
       '#description' => $this->t("Make the video fill the width of it's container, adjusting to the size of the user's screen."),
       '#default_value' => $this->getSetting('responsive'),
@@ -109,7 +103,7 @@ class Video extends FormatterBase implements ContainerFactoryPluginInterface {
       ],
     ];
     $elements['width'] = [
-      '#title' => $this->t('Width'),
+      '#title' => t('Width'),
       '#type' => 'number',
       '#field_suffix' => 'px',
       '#default_value' => $this->getSetting('width'),
@@ -118,7 +112,7 @@ class Video extends FormatterBase implements ContainerFactoryPluginInterface {
       '#states' => $responsive_checked_state,
     ];
     $elements['height'] = [
-      '#title' => $this->t('Height'),
+      '#title' => t('Height'),
       '#type' => 'number',
       '#field_suffix' => 'px',
       '#default_value' => $this->getSetting('height'),
@@ -134,9 +128,9 @@ class Video extends FormatterBase implements ContainerFactoryPluginInterface {
    */
   public function settingsSummary() {
     $dimensions = $this->getSetting('responsive') ? $this->t('Responsive') : $this->t('@widthx@height', ['@width' => $this->getSetting('width'), '@height' => $this->getSetting('height')]);
-    $summary[] = $this->t('Embedded Video (@dimensions@autoplay).', [
+    $summary[] = t('Embedded Video (@dimensions@autoplay).', [
       '@dimensions' => $dimensions,
-      '@autoplay' => $this->getSetting('autoplay') ? $this->t(', autoplaying') : '',
+      '@autoplay' => $this->getSetting('autoplay') ? t(', autoplaying') : '',
     ]);
     return $summary;
   }

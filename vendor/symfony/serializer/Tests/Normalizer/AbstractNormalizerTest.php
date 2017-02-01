@@ -29,8 +29,8 @@ class AbstractNormalizerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $loader = $this->getMockBuilder('Symfony\Component\Serializer\Mapping\Loader\LoaderChain')->setConstructorArgs(array(array()))->getMock();
-        $this->classMetadata = $this->getMockBuilder('Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory')->setConstructorArgs(array($loader))->getMock();
+        $loader = $this->getMock('Symfony\Component\Serializer\Mapping\Loader\LoaderChain', array(), array(array()));
+        $this->classMetadata = $this->getMock('Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory', array(), array($loader));
         $this->normalizer = new AbstractNormalizerDummy($this->classMetadata);
     }
 

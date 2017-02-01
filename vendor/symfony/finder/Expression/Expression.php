@@ -29,7 +29,7 @@ class Expression implements ValueInterface
     /**
      * @param string $expr
      *
-     * @return self
+     * @return Expression
      */
     public static function create($expr)
     {

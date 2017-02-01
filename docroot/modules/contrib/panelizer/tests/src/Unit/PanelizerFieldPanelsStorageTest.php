@@ -18,6 +18,7 @@ use Drupal\panelizer\Panelizer;
 use Drupal\panelizer\Plugin\PanelsStorage\PanelizerFieldPanelsStorage;
 use Drupal\panels\Plugin\DisplayVariant\PanelsDisplayVariant;
 use Drupal\Tests\UnitTestCase;
+use Prophecy\Argument;
 
 /**
  * Tests the PanelizerFieldPanelsStorage service.

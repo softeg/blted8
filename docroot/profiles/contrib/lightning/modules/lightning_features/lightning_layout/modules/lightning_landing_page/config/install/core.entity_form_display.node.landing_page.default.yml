@@ -2,35 +2,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.body
     - field.field.node.landing_page.field_meta_tags
     - field.field.node.landing_page.panelizer
     - node.type.landing_page
   module:
     - metatag
-    - panelizer
     - path
-    - text
+_core:
+  default_config_hash: y9v0WjDRAKPOqP4lBm739G3HsXWiuAb6bEibCizFrEE
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 1
-    settings:
-      rows: 5
-      placeholder: ''
-      summary_rows: 2
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_meta_tags:
-    weight: 6
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -41,7 +32,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   title:
@@ -53,7 +44,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

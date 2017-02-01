@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: media_manager
-label: 'Media manager'
+label: 'Media Manager'
 weight: 6
 is_admin: null
 permissions:

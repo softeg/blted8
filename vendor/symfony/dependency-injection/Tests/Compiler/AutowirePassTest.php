@@ -213,13 +213,13 @@ class AutowirePassTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(1, $container->getDefinition('coop_tilleuls')->getArguments());
         $this->assertEquals('autowired.symfony\component\dependencyinjection\tests\compiler\dunglas', $container->getDefinition('coop_tilleuls')->getArgument(0));
 
-        $dunglasDefinition = $container->getDefinition('autowired.Symfony\Component\DependencyInjection\Tests\Compiler\Dunglas');
+        $dunglasDefinition = $container->getDefinition('autowired.symfony\component\dependencyinjection\tests\compiler\dunglas');
         $this->assertEquals(__NAMESPACE__.'\Dunglas', $dunglasDefinition->getClass());
         $this->assertFalse($dunglasDefinition->isPublic());
         $this->assertCount(1, $dunglasDefinition->getArguments());
         $this->assertEquals('autowired.symfony\component\dependencyinjection\tests\compiler\lille', $dunglasDefinition->getArgument(0));
 
-        $lilleDefinition = $container->getDefinition('autowired.Symfony\Component\DependencyInjection\Tests\Compiler\Lille');
+        $lilleDefinition = $container->getDefinition('autowired.symfony\component\dependencyinjection\tests\compiler\lille');
         $this->assertEquals(__NAMESPACE__.'\Lille', $lilleDefinition->getClass());
     }
 

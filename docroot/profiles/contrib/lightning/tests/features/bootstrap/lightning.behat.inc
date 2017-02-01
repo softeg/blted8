@@ -27,8 +27,6 @@ class LightningSubContext extends DrupalSubContextBase {
 
   /**
    * Start time for each scenario.
-   *
-   * @var int
    */
   protected $startTime;
 

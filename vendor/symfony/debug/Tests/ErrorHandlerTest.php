@@ -134,7 +134,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
         try {
             $handler = ErrorHandler::register();
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
 
             $handler->setDefaultLogger($logger, E_NOTICE);
             $handler->setDefaultLogger($logger, array(E_USER_NOTICE => LogLevel::CRITICAL));
@@ -213,7 +213,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
             restore_error_handler();
             restore_exception_handler();
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
 
             $that = $this;
             $warnArgCheck = function ($logLevel, $message, $context) use ($that) {
@@ -238,7 +238,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
             restore_error_handler();
             restore_exception_handler();
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
 
             $that = $this;
             $logArgCheck = function ($level, $message, $context) use ($that) {
@@ -306,7 +306,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
             $that->assertArrayHasKey('stack', $context);
         };
 
-        $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+        $logger = $this->getMock('Psr\Log\LoggerInterface');
         $logger
             ->expects($this->once())
             ->method('log')
@@ -325,7 +325,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
 
             $exception = new \Exception('foo');
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
 
             $that = $this;
             $logArgCheck = function ($level, $message, $context) use ($that) {
@@ -372,7 +372,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
             $handler = ErrorHandler::register();
             $handler->screamAt(E_USER_WARNING);
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
 
             $logger
                 ->expects($this->exactly(2))
@@ -435,7 +435,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
 
         $bootLogger->log($expectedLog[0], $expectedLog[1], $expectedLog[2]);
 
-        $mockLogger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+        $mockLogger = $this->getMock('Psr\Log\LoggerInterface');
         $mockLogger->expects($this->once())
             ->method('log')
             ->with(LogLevel::WARNING, 'Foo message', $expectedLog[2]);
@@ -455,7 +455,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
                 'line' => 123,
             );
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
 
             $that = $this;
             $logArgCheck = function ($level, $message, $context) use ($that) {
@@ -507,7 +507,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
         try {
             $handler = ErrorHandler::register();
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
             $logger
                 ->expects($this->once())
                 ->method('log')
@@ -560,7 +560,7 @@ class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
             restore_error_handler();
             restore_exception_handler();
 
-            $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+            $logger = $this->getMock('Psr\Log\LoggerInterface');
 
             $that = $this;
             $logArgCheck = function ($level, $message, $context) use ($that) {

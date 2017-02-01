@@ -43,7 +43,7 @@ trait RequestTrait
     private $requestTarget;
 
     /**
-     * @var UriInterface
+     * @var null|UriInterface
      */
     private $uri;
 
@@ -130,6 +130,10 @@ trait RequestTrait
     {
         if (null !== $this->requestTarget) {
             return $this->requestTarget;
+        }
+
+        if (! $this->uri) {
+            return '/';
         }
 
         $target = $this->uri->getPath();

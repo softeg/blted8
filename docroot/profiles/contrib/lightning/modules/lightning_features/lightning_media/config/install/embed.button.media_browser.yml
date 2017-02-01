@@ -4,7 +4,7 @@ dependencies:
   module:
     - entity_embed
     - media_entity
-label: 'Media browser'
+label: 'Media Browser'
 id: media_browser
 type_id: entity
 type_settings:

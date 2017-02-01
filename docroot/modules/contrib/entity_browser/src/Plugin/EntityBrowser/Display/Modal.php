@@ -109,7 +109,6 @@ class Modal extends IFrame {
     $element_name = $this->configuration['entity_browser_id'];
     $name = 'entity_browser_iframe_' . $element_name;
     $content = [
-      '#prefix' => '<div class="ajax-progress-throbber"></div>',
       '#type' => 'html_tag',
       '#tag' => 'iframe',
       '#attributes' => [
@@ -118,7 +117,7 @@ class Modal extends IFrame {
         'width' => '100%',
         'height' => $this->configuration['height'] - 90,
         'frameborder' => 0,
-        'style' => 'padding:0; position:relative; z-index:10002;',
+        'style' => 'padding:0',
         'name' => $name,
         'id' => $name,
       ],

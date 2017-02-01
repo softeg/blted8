@@ -50,7 +50,6 @@ class HookManager implements EventSubscriberInterface
     const POST_ALTER_RESULT = 'post-alter';
     const STATUS_DETERMINER = 'status';
     const EXTRACT_OUTPUT = 'extract';
-    const ON_EVENT = 'on-event';
 
     public function __construct()
     {
@@ -584,7 +583,7 @@ class HookManager implements EventSubscriberInterface
      *
      * @return callable[]
      */
-    public function getHook($name, $hook)
+    protected function getHook($name, $hook)
     {
         if (isset($this->hooks[$name][$hook])) {
             return $this->hooks[$name][$hook];

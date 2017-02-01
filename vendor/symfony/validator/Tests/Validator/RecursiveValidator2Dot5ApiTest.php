@@ -35,7 +35,7 @@ class RecursiveValidator2Dot5ApiTest extends Abstract2Dot5ApiTest
     {
         $entity = new Entity();
 
-        $validatorContext = $this->getMockBuilder('Symfony\Component\Validator\Validator\ContextualValidatorInterface')->getMock();
+        $validatorContext = $this->getMock('Symfony\Component\Validator\Validator\ContextualValidatorInterface');
         $validatorContext
             ->expects($this->once())
             ->method('validate')

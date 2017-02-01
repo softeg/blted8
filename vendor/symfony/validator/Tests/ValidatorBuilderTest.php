@@ -34,7 +34,7 @@ class ValidatorBuilderTest extends \PHPUnit_Framework_TestCase
     public function testAddObjectInitializer()
     {
         $this->assertSame($this->builder, $this->builder->addObjectInitializer(
-            $this->getMockBuilder('Symfony\Component\Validator\ObjectInitializerInterface')->getMock()
+            $this->getMock('Symfony\Component\Validator\ObjectInitializerInterface')
         ));
     }
 
@@ -86,21 +86,21 @@ class ValidatorBuilderTest extends \PHPUnit_Framework_TestCase
     public function testSetMetadataCache()
     {
         $this->assertSame($this->builder, $this->builder->setMetadataCache(
-            $this->getMockBuilder('Symfony\Component\Validator\Mapping\Cache\CacheInterface')->getMock())
+            $this->getMock('Symfony\Component\Validator\Mapping\Cache\CacheInterface'))
         );
     }
 
     public function testSetConstraintValidatorFactory()
     {
         $this->assertSame($this->builder, $this->builder->setConstraintValidatorFactory(
-            $this->getMockBuilder('Symfony\Component\Validator\ConstraintValidatorFactoryInterface')->getMock())
+            $this->getMock('Symfony\Component\Validator\ConstraintValidatorFactoryInterface'))
         );
     }
 
     public function testSetTranslator()
     {
         $this->assertSame($this->builder, $this->builder->setTranslator(
-            $this->getMockBuilder('Symfony\Component\Translation\TranslatorInterface')->getMock())
+            $this->getMock('Symfony\Component\Translation\TranslatorInterface'))
         );
     }
 

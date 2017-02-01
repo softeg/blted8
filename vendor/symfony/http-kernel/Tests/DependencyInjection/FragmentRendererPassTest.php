@@ -28,14 +28,14 @@ class FragmentRendererPassTest extends \PHPUnit_Framework_TestCase
             'my_content_renderer' => array(array()),
         );
 
-        $renderer = $this->getMockBuilder('Symfony\Component\DependencyInjection\Definition')->getMock();
+        $renderer = $this->getMock('Symfony\Component\DependencyInjection\Definition');
         $renderer
             ->expects($this->once())
             ->method('addMethodCall')
             ->with('addRenderer', array(new Reference('my_content_renderer')))
         ;
 
-        $definition = $this->getMockBuilder('Symfony\Component\DependencyInjection\Definition')->getMock();
+        $definition = $this->getMock('Symfony\Component\DependencyInjection\Definition');
         $definition->expects($this->atLeastOnce())
             ->method('getClass')
             ->will($this->returnValue('Symfony\Component\HttpKernel\Tests\DependencyInjection\RendererService'));
@@ -45,7 +45,10 @@ class FragmentRendererPassTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue(true))
         ;
 
-        $builder = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerBuilder')->setMethods(array('hasDefinition', 'findTaggedServiceIds', 'getDefinition'))->getMock();
+        $builder = $this->getMock(
+            'Symfony\Component\DependencyInjection\ContainerBuilder',
+            array('hasDefinition', 'findTaggedServiceIds', 'getDefinition')
+        );
         $builder->expects($this->any())
             ->method('hasDefinition')
             ->will($this->returnValue(true));
@@ -76,9 +79,12 @@ class FragmentRendererPassTest extends \PHPUnit_Framework_TestCase
             'my_content_renderer' => array(array('alias' => 'foo')),
         );
 
-        $definition = $this->getMockBuilder('Symfony\Component\DependencyInjection\Definition')->getMock();
+        $definition = $this->getMock('Symfony\Component\DependencyInjection\Definition');
 
-        $builder = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerBuilder')->setMethods(array('hasDefinition', 'findTaggedServiceIds', 'getDefinition'))->getMock();
+        $builder = $this->getMock(
+            'Symfony\Component\DependencyInjection\ContainerBuilder',
+            array('hasDefinition', 'findTaggedServiceIds', 'getDefinition')
+        );
         $builder->expects($this->any())
             ->method('hasDefinition')
             ->will($this->returnValue(true));
@@ -102,14 +108,14 @@ class FragmentRendererPassTest extends \PHPUnit_Framework_TestCase
             'my_content_renderer' => array(array('alias' => 'foo')),
         );
 
-        $renderer = $this->getMockBuilder('Symfony\Component\DependencyInjection\Definition')->getMock();
+        $renderer = $this->getMock('Symfony\Component\DependencyInjection\Definition');
         $renderer
             ->expects($this->once())
             ->method('addMethodCall')
             ->with('addRendererService', array('foo', 'my_content_renderer'))
         ;
 
-        $definition = $this->getMockBuilder('Symfony\Component\DependencyInjection\Definition')->getMock();
+        $definition = $this->getMock('Symfony\Component\DependencyInjection\Definition');
         $definition->expects($this->atLeastOnce())
             ->method('getClass')
             ->will($this->returnValue('Symfony\Component\HttpKernel\Tests\DependencyInjection\RendererService'));
@@ -119,7 +125,10 @@ class FragmentRendererPassTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue(true))
         ;
 
-        $builder = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerBuilder')->setMethods(array('hasDefinition', 'findTaggedServiceIds', 'getDefinition'))->getMock();
+        $builder = $this->getMock(
+            'Symfony\Component\DependencyInjection\ContainerBuilder',
+            array('hasDefinition', 'findTaggedServiceIds', 'getDefinition')
+        );
         $builder->expects($this->any())
             ->method('hasDefinition')
             ->will($this->returnValue(true));

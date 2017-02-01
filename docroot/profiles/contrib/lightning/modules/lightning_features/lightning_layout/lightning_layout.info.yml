@@ -1,8 +1,7 @@
-name: 'Lightning Layout'
-core: 8.x
+name: Lightning Layout
 type: module
 description: 'Provides the tools to take control of your layout.'
-version: '8.x-2.03'
+core: 8.x
 package: Lightning
 dependencies:
   - lightning_core
@@ -11,5 +10,4 @@ dependencies:
   - page_manager
   - panelizer
 components:
-  - entity_block
   - lightning_landing_page

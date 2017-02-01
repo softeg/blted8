@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.ief_view_files
   module:
     - views
 name: ief_entity_browser_file

@@ -69,12 +69,4 @@ interface SelectionDisplayInterface extends PluginInspectionInterface, Configura
    */
   public function checkPreselectionSupport();
 
-  /**
-   * Returns true if selection display supports selection over javascript.
-   *
-   * @return bool
-   *   True if javascript add/remove events are supported.
-   */
-  public function supportsJsCommands();
-
 }

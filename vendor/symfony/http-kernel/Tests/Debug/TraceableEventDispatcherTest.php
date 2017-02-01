@@ -108,7 +108,7 @@ class TraceableEventDispatcherTest extends \PHPUnit_Framework_TestCase
 
     protected function getHttpKernel($dispatcher, $controller)
     {
-        $resolver = $this->getMockBuilder('Symfony\Component\HttpKernel\Controller\ControllerResolverInterface')->getMock();
+        $resolver = $this->getMock('Symfony\Component\HttpKernel\Controller\ControllerResolverInterface');
         $resolver->expects($this->once())->method('getController')->will($this->returnValue($controller));
         $resolver->expects($this->once())->method('getArguments')->will($this->returnValue(array()));
 

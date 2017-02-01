@@ -357,14 +357,13 @@ class CommandFileDiscovery
      */
     protected function joinPaths(array $pathParts)
     {
-        $path = $this->joinParts(
+        return $this->joinParts(
             '/',
             $pathParts,
             function ($item) {
                 return !empty($item);
             }
         );
-        return str_replace(DIRECTORY_SEPARATOR, '/', $path);
     }
 
     /**
@@ -376,12 +375,6 @@ class CommandFileDiscovery
      */
     protected function joinParts($delimiter, $parts, $filterFunction)
     {
-        $parts = array_map(
-            function ($item) use ($delimiter) {
-                return rtrim($item, $delimiter);
-            },
-            $parts
-        );
         return implode(
             $delimiter,
             array_filter($parts, $filterFunction)

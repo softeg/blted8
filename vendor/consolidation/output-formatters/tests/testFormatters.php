@@ -1,12 +1,11 @@
 <?php
 namespace Consolidation\OutputFormatters;
 
-use Consolidation\TestUtils\PropertyListWithCsvCells;
+use Consolidation\TestUtils\AssociativeListWithCsvCells;
 use Consolidation\TestUtils\RowsOfFieldsWithAlternatives;
 use Consolidation\OutputFormatters\Options\FormatterOptions;
-use Consolidation\OutputFormatters\StructuredData\AssociativeList;
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
-use Consolidation\OutputFormatters\StructuredData\PropertyList;
+use Consolidation\OutputFormatters\StructuredData\AssociativeList;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputInterface;
@@ -335,7 +334,7 @@ EOT;
     /**
      * @expectedException \Consolidation\OutputFormatters\Exception\IncompatibleDataException
      * @expectedExceptionCode 1
-     * @expectedExceptionMessage Data provided to Consolidation\OutputFormatters\Formatters\CsvFormatter must be one of an instance of Consolidation\OutputFormatters\StructuredData\RowsOfFields, an instance of Consolidation\OutputFormatters\StructuredData\PropertyList or an array. Instead, a string was provided.
+     * @expectedExceptionMessage Data provided to Consolidation\OutputFormatters\Formatters\CsvFormatter must be one of an instance of Consolidation\OutputFormatters\StructuredData\RowsOfFields, an instance of Consolidation\OutputFormatters\StructuredData\AssociativeList or an array. Instead, a string was provided.
      */
     function testBadDataTypeForCsv()
     {
@@ -522,36 +521,6 @@ a\tb\tc
 x\t\tz
 EOT;
         $this->assertFormattedOutputMatches($expectedTsvWithHeaders, 'tsv', $data, new FormatterOptions(), ['include-field-labels' => true]);
-    }
-
-    function testTableWithWordWrapping()
-    {
-        $options = new FormatterOptions();
-        $options->setWidth(42);
-
-        $data = [
-            [
-                'first' => 'This is a really long cell that contains a lot of data. When it is rendered, it should be wrapped across multiple lines.',
-                'second' => 'This is the second column of the same table. It is also very long, and should be wrapped across multiple lines, just like the first column.',
-            ]
-        ];
-        $data = new RowsOfFields($data);
-
-        $expected = <<<EOT
- ------------------- --------------------
-  First               Second
- ------------------- --------------------
-  This is a really    This is the second
-  long cell that      column of the same
-  contains a lot of   table. It is also
-  data. When it is    very long, and
-  rendered, it        should be wrapped
-  should be wrapped   across multiple
-  across multiple     lines, just like
-  lines.              the first column.
- ------------------- --------------------
-EOT;
-        $this->assertFormattedOutputMatches($expected, 'table', $data, $options);
     }
 
     protected function simpleTableExampleData()
@@ -868,17 +837,6 @@ EOT;
             'two' => 'banana',
             'three' => 'carrot',
         ];
-        return new PropertyList($data);
-    }
-
-    // Test with the deprecated data structure
-    protected function simpleListExampleDataUsingAssociativeList()
-    {
-        $data = [
-            'one' => 'apple',
-            'two' => 'banana',
-            'three' => 'carrot',
-        ];
         return new AssociativeList($data);
     }
 
@@ -912,6 +870,7 @@ EOT;
 
     function testSimpleList()
     {
+        $data = $this->simpleListExampleData();
 
         $expected = <<<EOT
  ------- --------
@@ -920,12 +879,6 @@ EOT;
   Three   carrot
  ------- --------
 EOT;
-        $data = $this->simpleListExampleDataUsingAssociativeList();
-
-        $this->assertFormattedOutputMatches($expected, 'table', $data);
-
-        $data = $this->simpleListExampleData();
-
         $this->assertFormattedOutputMatches($expected, 'table', $data);
 
         $expected = <<<EOT
@@ -940,20 +893,6 @@ EOT;
         $formatterOptionsWithFieldLables
             ->setFieldLabels(['one' => 'I', 'two' => 'II', 'three' => 'III']);
         $this->assertFormattedOutputMatches($expected, 'table', $data, $formatterOptionsWithFieldLables);
-
-        $expectedDrushStyleTable = <<<EOT
- One   : apple
- Two   : banana
- Three : carrot
-EOT;
-
-        // If we provide field labels, then the output will change to reflect that.
-        $formatterOptionsWithFieldLables = new FormatterOptions();
-        $formatterOptionsWithFieldLables
-            ->setTableStyle('compact')
-            ->setListDelimiter(':');
-        $this->assertFormattedOutputMatches($expectedDrushStyleTable, 'table', $data, $formatterOptionsWithFieldLables);
-
 
         // Adding an extra field that does not exist in the data set should not change the output
         $formatterOptionsWithExtraFieldLables = new FormatterOptions();
@@ -1021,7 +960,7 @@ EOT;
             'three' => 'carrot',
             'four' => ['peaches', 'pumpkin pie'],
         ];
-        $list = new PropertyList($data);
+        $list = new AssociativeList($data);
 
         $list->addRendererFunction(
             function ($key, $cellData, FormatterOptions $options)
@@ -1044,16 +983,16 @@ EOT;
             'three' => 'carrot',
             'four' => ['peaches', 'pumpkin pie'],
         ];
-        return new PropertyListWithCsvCells($data);
+        return new AssociativeListWithCsvCells($data);
     }
 
-    function testPropertyListWithCsvCells()
+    function testAssociativeListWithCsvCells()
     {
-        $this->doPropertyListWithCsvCells($this->associativeListWithRenderer());
-        $this->doPropertyListWithCsvCells($this->associativeListWithCsvCells());
+        $this->doAssociativeListWithCsvCells($this->associativeListWithRenderer());
+        $this->doAssociativeListWithCsvCells($this->associativeListWithCsvCells());
     }
 
-    function doPropertyListWithCsvCells($data)
+    function doAssociativeListWithCsvCells($data)
     {
         $expected = <<<EOT
  ------- ---------------------
@@ -1081,12 +1020,6 @@ EOT;
 
         $expectedCsvNoHeaders = 'apple,"banana,plantain",carrot,"peaches,pumpkin pie"';
         $this->assertFormattedOutputMatches($expectedCsvNoHeaders, 'csv', $data, new FormatterOptions(), ['include-field-labels' => false]);
-
-        $expectedTsv = <<< EOT
-apple\tbanana,plantain\tcarrot\tpeaches,pumpkin pie
-EOT;
-        $this->assertFormattedOutputMatches($expectedTsv, 'tsv', $data);
-
     }
 
     function testSimpleListWithFieldLabels()
@@ -1275,8 +1208,8 @@ EOT;
 {
     "name": "widget-collection",
     "description": "A couple of widgets.",
-    "widgets": {
-        "usual": {
+    "widgets": [
+        {
             "name": "usual",
             "colors": [
                 "red",
@@ -1289,7 +1222,7 @@ EOT;
                 "triangle"
             ]
         },
-        "unusual": {
+        {
             "name": "unusual",
             "colors": [
                 "muave",
@@ -1302,7 +1235,7 @@ EOT;
                 "trapazoid"
             ]
         }
-    }
+    ]
 }
 EOT;
 

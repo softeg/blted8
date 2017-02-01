@@ -358,14 +358,4 @@
 #$aliases['live'] = array(
 #    'uri' => 'http://example.com',
 #    'root' => $aliases['dev']['root'],
-#  ) + $aliases['server'];// [vagrant_machine_name].local
-$aliases['blt-project.local'] = array(
-  // /var/www/[vagrant_machine_name]/docroot
-  'root' => '/var/www/blt-project/docroot',
-  // vagrant_hostname
-  'uri' => 'http://127.0.0.1:8888',
-  // vagrant_hostname
-  'remote-host' => '127.0.0.1:8888',
-  'remote-user' => 'vagrant',
-  'ssh-options' => '-o PasswordAuthentication=no -i ' . drush_server_home() . '/.vagrant.d/insecure_private_key'
-);
+#  ) + $aliases['server'];
