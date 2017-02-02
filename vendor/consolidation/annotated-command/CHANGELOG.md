@@ -1,8 +1,31 @@
 # Change Log
 
+### 2.3.3 - 30 Jan 2017
 
-### 2.0.1 ~ 2.0.3 - 14 November 2016
+- Automatically rebuild cached commandfile data when commandfile changes.
 
+### 2.3.2 - 26 Jan 2017
+
+- Bugfix: Include description of last parameter in help (was omitted if no options present)
+
+### 2.3.1 - 20 Jan 2017
+
+- Add Windows testing with Appveyor
+
+### 2.3.0 - 19 Jan 2017
+
+- Add a command info cache to improve performance of applications with many commands
+- Bugfix: Allow trailing backslashes in namespaces in CommandFileDiscovery
+- Bugfix: Rename @topic to @topics
+
+### 2.2.0 - 23 November 2016
+
+- Support custom events
+- Add xml and json output for replacement help command. Text / html format for replacement help command not available yet.
+
+### 2.1.0 - 14 November 2016
+
+- Add support for output formatter wordwrapping 
 - Fix version requirement for output-formatters in composer.json
 - Use output-formatters ~3
 - Move php_codesniffer back to require-dev (moved to require by mistake)
