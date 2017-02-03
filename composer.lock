@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../blt",
-                "reference": "b1a5d18c930d771310a5a0b525c51e8e28c8be3c",
+                "reference": "5322d9158d7d516da1d0b35cf9b072c366d21e2b",
                 "shasum": null
             },
             "require": {
@@ -1735,17 +1735,17 @@
         },
         {
             "name": "drupal/cog",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/cog",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cog-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "1e9c3e059c320ffc349ca8dcff2f4f24001e599c"
+                "url": "https://ftp.drupal.org/files/projects/cog-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "4fdfcf16dbc3a3ff6324ca3e490618ad1d093f1c"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1756,8 +1756,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1481917082"
+                    "version": "8.x-1.4",
+                    "datestamp": "1486133583"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4583,16 +4583,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "1.2.13",
+            "version": "1.2.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "b8bb147f46cc9790326ce2440a13be06cc5a63bb"
+                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b8bb147f46cc9790326ce2440a13be06cc5a63bb",
-                "reference": "b8bb147f46cc9790326ce2440a13be06cc5a63bb",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5642614492f0ca2064c01d60cc33284cc2f731a9",
+                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9",
                 "shasum": ""
             },
             "require": {
@@ -4631,7 +4631,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2016-07-03T21:52:18+00:00"
+            "time": "2017-02-03T22:48:59+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -5274,16 +5274,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "adf44419c0fc014a0f191db6f89d3e55d4211744"
+                "reference": "5b8182cc0abb4b0ff290ba9df6c0e1323286013a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/adf44419c0fc014a0f191db6f89d3e55d4211744",
-                "reference": "adf44419c0fc014a0f191db6f89d3e55d4211744",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/5b8182cc0abb4b0ff290ba9df6c0e1323286013a",
+                "reference": "5b8182cc0abb4b0ff290ba9df6c0e1323286013a",
                 "shasum": ""
             },
             "require": {
@@ -5321,7 +5321,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-12-06T11:30:35+00:00"
+            "time": "2017-02-03T21:57:31+00:00"
         },
         {
             "name": "paragonie/random_compat",
