@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit076217419606b5bddb35972452e24976
+class ComposerStaticInit8a735c0e73909119db4ed2dd8e405db1
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -3342,6 +3342,10 @@ class ComposerStaticInit076217419606b5bddb35972452e24976
         'PHPUnitTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/phpunit/PHPUnitTask.php',
         'PHPUnitTestRunner' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/phpunit/PHPUnitTestRunner.php',
         'PHPUnitUtil' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/phpunit/PHPUnitUtil.php',
+        'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
+        'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
+        'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
+        'PHPUnit\\Framework\\TestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestListener.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -5906,10 +5910,10 @@ class ComposerStaticInit076217419606b5bddb35972452e24976
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit076217419606b5bddb35972452e24976::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit076217419606b5bddb35972452e24976::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit076217419606b5bddb35972452e24976::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit076217419606b5bddb35972452e24976::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8a735c0e73909119db4ed2dd8e405db1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8a735c0e73909119db4ed2dd8e405db1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8a735c0e73909119db4ed2dd8e405db1::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit8a735c0e73909119db4ed2dd8e405db1::$classMap;
 
         }, null, ClassLoader::class);
     }
