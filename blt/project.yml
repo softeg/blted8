@@ -2,6 +2,7 @@ project:
   machine_name: blt-project
   prefix: BLT
   human_name: 'BLTed 8'
+  locale: en
   profile:
     name: lightning
   local:
