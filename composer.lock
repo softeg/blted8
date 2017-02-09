@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../blt",
-                "reference": "0af2e42030bc1c4a995ba611e3e84e80d7e5199e",
+                "reference": "5bf1b642a0f6e9c366643a3dfcf2017322db260c",
                 "shasum": null
             },
             "require": {
@@ -9722,16 +9722,16 @@
         },
         {
             "name": "geerlingguy/drupal-vm",
-            "version": "4.2.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geerlingguy/drupal-vm.git",
-                "reference": "5000f1965356bff217719ccc8dc9ff7488bbd557"
+                "reference": "efefdb497ac5ecf4e375bdd1e5d8982f98a0b0ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/5000f1965356bff217719ccc8dc9ff7488bbd557",
-                "reference": "5000f1965356bff217719ccc8dc9ff7488bbd557",
+                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/efefdb497ac5ecf4e375bdd1e5d8982f98a0b0ce",
+                "reference": "efefdb497ac5ecf4e375bdd1e5d8982f98a0b0ce",
                 "shasum": ""
             },
             "type": "vm",
@@ -9757,7 +9757,7 @@
                 "virtual machine",
                 "vm"
             ],
-            "time": "2017-01-30T21:36:14+00:00"
+            "time": "2017-02-09T03:50:18+00:00"
         },
         {
             "name": "instaclick/php-webdriver",
