@@ -2484,7 +2484,7 @@
         "dist": {
             "type": "path",
             "url": "../../blt",
-            "reference": "39ce365eb52ff3d4e724294b9ddd78f3dae94130",
+            "reference": "34023798aa8ebbebddfaad37831c2a811894ad77",
             "shasum": null
         },
         "require": {
@@ -8493,17 +8493,17 @@
     },
     {
         "name": "psy/psysh",
-        "version": "v0.8.0",
-        "version_normalized": "0.8.0.0",
+        "version": "v0.8.1",
+        "version_normalized": "0.8.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/bobthecow/psysh.git",
-            "reference": "4a8860e13aa68a4bbf2476c014f8a1f14f1bf991"
+            "reference": "701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4a8860e13aa68a4bbf2476c014f8a1f14f1bf991",
-            "reference": "4a8860e13aa68a4bbf2476c014f8a1f14f1bf991",
+            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a",
+            "reference": "701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a",
             "shasum": ""
         },
         "require": {
@@ -8527,14 +8527,14 @@
             "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
             "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
         },
-        "time": "2016-12-07T17:15:07+00:00",
+        "time": "2017-01-15T17:54:13+00:00",
         "bin": [
             "bin/psysh"
         ],
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-develop": "0.8.x-dev"
+                "dev-develop": "0.9.x-dev"
             }
         },
         "installation-source": "dist",
