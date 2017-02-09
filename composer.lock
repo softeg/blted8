@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8fa7f458a724ef0bbbd8aac2c26c1c80",
+    "content-hash": "0f8f376679916c67aef287782815aeac",
     "packages": [
         {
             "name": "acquia/blt",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../blt",
-                "reference": "0ce4ea83b76ac935c6994b312b81288e6ea02fe9",
+                "reference": "02ae1861b8f9c4b64ef90c2609c10c3da62d4508",
                 "shasum": null
             },
             "require": {
@@ -197,9 +197,6 @@
                         "2844068 - Create derivatives for any viewable entity.": "https://www.drupal.org/files/issues/entity_block-view-builder-class.patch",
                         "2846004 - Entity Block does not perform any access control": "https://www.drupal.org/files/issues/2846004-2.patch"
                     }
-                },
-                "patches_applied": {
-                    "New LightningExtension subcontexts do not autoload": "https://www.drupal.org/files/issues/2836258-3-lightning-extension-autoload.patch"
                 }
             },
             "autoload": {

@@ -1,4 +1,4 @@
-@lightning @api @lightningextension
+@lightning @api
 Feature: Enhancements to display modes and related displays
 
   Scenario: Users are notified that an internal view mode is internal

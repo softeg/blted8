@@ -57,11 +57,6 @@
             ]
         },
         "enable-patching": true,
-        "patches": {
-            "acquia/lightning": {
-                "New LightningExtension subcontexts do not autoload": "https://www.drupal.org/files/issues/2836258-3-lightning-extension-autoload.patch"
-            }
-        },
         "installer-paths": {
             "docroot/core": [
                 "type:drupal-core"

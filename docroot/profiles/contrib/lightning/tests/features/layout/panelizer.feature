@@ -73,7 +73,6 @@ Feature: Panelizer
     And I should see "Region: right"
     Then I should not see "Region: middle"
 
-  @lightningextension
   Scenario: Describing a panelized view mode
     Given I am logged in as a user with the administrator role
     When I describe the node.full view mode:
