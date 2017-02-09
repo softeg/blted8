@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../blt",
-                "reference": "b5bf409e5e83dadb69ad55bc03428befd8aebcbf",
+                "reference": "0ce4ea83b76ac935c6994b312b81288e6ea02fe9",
                 "shasum": null
             },
             "require": {
