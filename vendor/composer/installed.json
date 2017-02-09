@@ -1,54 +1,5 @@
 [
     {
-        "name": "grasmash/drupal-security-warning",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/grasmash/drupal-security-warning.git",
-            "reference": "8c74ca0111433d1ae582f258f4e2d9abe0487dee"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/grasmash/drupal-security-warning/zipball/8c74ca0111433d1ae582f258f4e2d9abe0487dee",
-            "reference": "8c74ca0111433d1ae582f258f4e2d9abe0487dee",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "^1.0",
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "composer/composer": "~1.0",
-            "squizlabs/php_codesniffer": "^2.7"
-        },
-        "time": "2016-12-16T00:45:43+00:00",
-        "type": "composer-plugin",
-        "extra": {
-            "class": "grasmash\\DrupalSecurityWarning\\Composer\\Plugin"
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "grasmash\\DrupalSecurityWarning\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0"
-        ],
-        "authors": [
-            {
-                "name": "Matthew Grasmick"
-            }
-        ],
-        "description": "Warns users installing Drupal project versions not supported by Security Team.",
-        "keywords": [
-            "drupal",
-            "security"
-        ]
-    },
-    {
         "name": "composer/installers",
         "version": "v1.2.0",
         "version_normalized": "1.2.0.0",
@@ -158,47 +109,53 @@
         ]
     },
     {
-        "name": "drupal-composer/drupal-scaffold",
-        "version": "2.2.0",
-        "version_normalized": "2.2.0.0",
+        "name": "grasmash/drupal-security-warning",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-            "reference": "3ad465ac853c2e52e6a808f5529859917662c256"
+            "url": "https://github.com/grasmash/drupal-security-warning.git",
+            "reference": "8c74ca0111433d1ae582f258f4e2d9abe0487dee"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/3ad465ac853c2e52e6a808f5529859917662c256",
-            "reference": "3ad465ac853c2e52e6a808f5529859917662c256",
+            "url": "https://api.github.com/repos/grasmash/drupal-security-warning/zipball/8c74ca0111433d1ae582f258f4e2d9abe0487dee",
+            "reference": "8c74ca0111433d1ae582f258f4e2d9abe0487dee",
             "shasum": ""
         },
         "require": {
-            "composer-plugin-api": "^1.0.0",
-            "php": ">=5.4.5"
+            "composer-plugin-api": "^1.0",
+            "php": ">=5.3.0"
         },
         "require-dev": {
-            "composer/composer": "dev-master",
-            "phpunit/phpunit": "^4.4.0"
+            "composer/composer": "~1.0",
+            "squizlabs/php_codesniffer": "^2.7"
         },
-        "time": "2016-11-05T10:46:44+00:00",
+        "time": "2016-12-16T00:45:43+00:00",
         "type": "composer-plugin",
         "extra": {
-            "class": "DrupalComposer\\DrupalScaffold\\Plugin",
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
+            "class": "grasmash\\DrupalSecurityWarning\\Composer\\Plugin"
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "DrupalComposer\\DrupalScaffold\\": "src/"
+                "grasmash\\DrupalSecurityWarning\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "GPL-2.0+"
+            "GPL-2.0"
         ],
-        "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core"
+        "authors": [
+            {
+                "name": "Matthew Grasmick"
+            }
+        ],
+        "description": "Warns users installing Drupal project versions not supported by Security Team.",
+        "keywords": [
+            "drupal",
+            "security"
+        ]
     },
     {
         "name": "cweagans/composer-patches",
@@ -245,6 +202,49 @@
             }
         ],
         "description": "Provides a way to patch Composer packages."
+    },
+    {
+        "name": "drupal-composer/drupal-scaffold",
+        "version": "2.2.0",
+        "version_normalized": "2.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/drupal-composer/drupal-scaffold.git",
+            "reference": "3ad465ac853c2e52e6a808f5529859917662c256"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/3ad465ac853c2e52e6a808f5529859917662c256",
+            "reference": "3ad465ac853c2e52e6a808f5529859917662c256",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0.0",
+            "php": ">=5.4.5"
+        },
+        "require-dev": {
+            "composer/composer": "dev-master",
+            "phpunit/phpunit": "^4.4.0"
+        },
+        "time": "2016-11-05T10:46:44+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "DrupalComposer\\DrupalScaffold\\Plugin",
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DrupalComposer\\DrupalScaffold\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core"
     },
     {
         "name": "vierbergenlars/php-semver",
@@ -1702,6 +1702,50 @@
         ]
     },
     {
+        "name": "oomphinc/composer-installers-extender",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/oomphinc/composer-installers-extender.git",
+            "reference": "e29c900d3d6a851ee8261859fb39edbb1f34722e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/oomphinc/composer-installers-extender/zipball/e29c900d3d6a851ee8261859fb39edbb1f34722e",
+            "reference": "e29c900d3d6a851ee8261859fb39edbb1f34722e",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0",
+            "composer/installers": "^1.0"
+        },
+        "time": "2016-07-05T15:00:34+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "OomphInc\\ComposerInstallersExtender\\Plugin"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "OomphInc\\ComposerInstallersExtender\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Stephen Beemsterboer",
+                "email": "stephen@oomphinc.com",
+                "homepage": "https://github.com/balbuf"
+            }
+        ],
+        "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
+        "homepage": "http://www.oomphinc.com/"
+    },
+    {
         "name": "symfony/filesystem",
         "version": "v2.8.17",
         "version_normalized": "2.8.17.0",
@@ -2484,18 +2528,20 @@
         "dist": {
             "type": "path",
             "url": "../../blt",
-            "reference": "7869e353a7a5c2f19aa3b5c3f63f3b6abde594f8",
+            "reference": "f4b26fcb3f68820bb6563403256eded8ec201dcb",
             "shasum": null
         },
         "require": {
             "asm89/twig-lint": "^1.0.2",
             "composer-plugin-api": "^1.0.0",
             "composer/installers": "^1.2.0",
+            "cweagans/composer-patches": "^1.6.0",
             "dflydev/dot-access-data": "dev-master",
             "doctrine/common": "^2.5",
             "drupal/coder": "^8.2.8",
             "grasmash/drupal-security-warning": "^1.0.0",
             "grasmash/yaml-cli": "^0.3",
+            "oomphinc/composer-installers-extender": "^1.1",
             "phing/phing": "^2.15.0",
             "php": ">=5.6",
             "phpunit/phpunit": "^4.8",

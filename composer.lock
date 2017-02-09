@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6288363a24d320f1f33076ac55adf85",
+    "content-hash": "c0735bcb390715c79ca3accb27582922",
     "packages": [
         {
             "name": "acquia/blt",
@@ -12,18 +12,20 @@
             "dist": {
                 "type": "path",
                 "url": "../../blt",
-                "reference": "7869e353a7a5c2f19aa3b5c3f63f3b6abde594f8",
+                "reference": "f4b26fcb3f68820bb6563403256eded8ec201dcb",
                 "shasum": null
             },
             "require": {
                 "asm89/twig-lint": "^1.0.2",
                 "composer-plugin-api": "^1.0.0",
                 "composer/installers": "^1.2.0",
+                "cweagans/composer-patches": "^1.6.0",
                 "dflydev/dot-access-data": "dev-master",
                 "doctrine/common": "^2.5",
                 "drupal/coder": "^8.2.8",
                 "grasmash/drupal-security-warning": "^1.0.0",
                 "grasmash/yaml-cli": "^0.3",
+                "oomphinc/composer-installers-extender": "^1.1",
                 "phing/phing": "^2.15.0",
                 "php": ">=5.6",
                 "phpunit/phpunit": "^4.8",
@@ -5319,6 +5321,48 @@
                 "php"
             ],
             "time": "2017-02-03T21:57:31+00:00"
+        },
+        {
+            "name": "oomphinc/composer-installers-extender",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oomphinc/composer-installers-extender.git",
+                "reference": "e29c900d3d6a851ee8261859fb39edbb1f34722e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oomphinc/composer-installers-extender/zipball/e29c900d3d6a851ee8261859fb39edbb1f34722e",
+                "reference": "e29c900d3d6a851ee8261859fb39edbb1f34722e",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "composer/installers": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "OomphInc\\ComposerInstallersExtender\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "OomphInc\\ComposerInstallersExtender\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Beemsterboer",
+                    "email": "stephen@oomphinc.com",
+                    "homepage": "https://github.com/balbuf"
+                }
+            ],
+            "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
+            "homepage": "http://www.oomphinc.com/",
+            "time": "2016-07-05T15:00:34+00:00"
         },
         {
             "name": "paragonie/random_compat",

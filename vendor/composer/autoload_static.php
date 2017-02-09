@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9cba4da1f863843be6af78da457d8659
+class ComposerStaticInit4d3c5e7ceb546d810be7604483f46041
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -85,6 +85,10 @@ class ComposerStaticInit9cba4da1f863843be6af78da457d8659
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
+        ),
+        'O' => 
+        array (
+            'OomphInc\\ComposerInstallersExtender\\' => 36,
         ),
         'M' => 
         array (
@@ -271,6 +275,10 @@ class ComposerStaticInit9cba4da1f863843be6af78da457d8659
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'OomphInc\\ComposerInstallersExtender\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src',
         ),
         'Masterminds\\' => 
         array (
@@ -3295,6 +3303,9 @@ class ComposerStaticInit9cba4da1f863843be6af78da457d8659
         'NotSelector' => __DIR__ . '/..' . '/phing/phing/classes/phing/types/selectors/NotSelector.php',
         'NotifySendTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/NotifySendTask.php',
         'NullPointerException' => __DIR__ . '/..' . '/phing/phing/classes/phing/system/lang/NullPointerException.php',
+        'OomphInc\\ComposerInstallersExtender\\Installer' => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src/Installer.php',
+        'OomphInc\\ComposerInstallersExtender\\InstallerHelper' => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src/InstallerHelper.php',
+        'OomphInc\\ComposerInstallersExtender\\Plugin' => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src/Plugin.php',
         'OrCondition' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/system/condition/OrCondition.php',
         'OrSelector' => __DIR__ . '/..' . '/phing/phing/classes/phing/types/selectors/OrSelector.php',
         'OsCondition' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/system/condition/OsCondition.php',
@@ -5910,10 +5921,10 @@ class ComposerStaticInit9cba4da1f863843be6af78da457d8659
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9cba4da1f863843be6af78da457d8659::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9cba4da1f863843be6af78da457d8659::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit9cba4da1f863843be6af78da457d8659::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit9cba4da1f863843be6af78da457d8659::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4d3c5e7ceb546d810be7604483f46041::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4d3c5e7ceb546d810be7604483f46041::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4d3c5e7ceb546d810be7604483f46041::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit4d3c5e7ceb546d810be7604483f46041::$classMap;
 
         }, null, ClassLoader::class);
     }
