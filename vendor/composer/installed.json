@@ -2527,8 +2527,8 @@
         "version_normalized": "9999999-dev",
         "dist": {
             "type": "path",
-            "url": "../../blt",
-            "reference": "07bf653dd0c7ccffd300102c4f71943edf924024",
+            "url": "/home/travis/build/acquia/blt",
+            "reference": "a1d320552cbcbaf9c0d75723a13a268e6b042f3c",
             "shasum": null
         },
         "require": {

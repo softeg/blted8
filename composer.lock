@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "216390fa049391fd9784e67bd7c75a43",
+    "content-hash": "f92a32522b1f3cc278267fd394db8727",
     "packages": [
         {
             "name": "acquia/blt",
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "../../blt",
-                "reference": "07bf653dd0c7ccffd300102c4f71943edf924024",
+                "url": "/home/travis/build/acquia/blt",
+                "reference": "a1d320552cbcbaf9c0d75723a13a268e6b042f3c",
                 "shasum": null
             },
             "require": {
@@ -779,7 +779,7 @@
                 "dot",
                 "notation"
             ],
-            "time": "2017-01-20 21:14:22"
+            "time": "2017-01-20T21:14:22+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -5600,7 +5600,7 @@
             "keywords": [
                 "instagram"
             ],
-            "time": "2013-11-13 23:10:03"
+            "time": "2013-11-13T23:10:03+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -6283,7 +6283,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Library used to find lowest common ancestor in graphs.",
-            "time": "2016-08-03 08:34:39"
+            "time": "2016-08-03T08:34:39+00:00"
         },
         {
             "name": "sebastian/comparator",
