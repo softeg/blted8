@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../blt",
-                "reference": "90194ec0e1d300c7265673b3ecf5be459e1d9964",
+                "reference": "362da78b0e782818bc75abdf98b114eb2230aeff",
                 "shasum": null
             },
             "require": {
@@ -9466,16 +9466,16 @@
         },
         {
             "name": "drupal/console-extend-plugin",
-            "version": "0.2.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoendrupal/drupal-console-extend-plugin.git",
-                "reference": "3c6b873205c6e33f24b33807901d3287a4ff9a02"
+                "reference": "df2396782960335d18a8e5eb6ab630a37ca5f493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-extend-plugin/zipball/3c6b873205c6e33f24b33807901d3287a4ff9a02",
-                "reference": "3c6b873205c6e33f24b33807901d3287a4ff9a02",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-extend-plugin/zipball/df2396782960335d18a8e5eb6ab630a37ca5f493",
+                "reference": "df2396782960335d18a8e5eb6ab630a37ca5f493",
                 "shasum": ""
             },
             "require": {
@@ -9503,7 +9503,7 @@
                 }
             ],
             "description": "Drupal Console Extend Plugin",
-            "time": "2017-02-09T17:09:50+00:00"
+            "time": "2017-02-14T08:38:49+00:00"
         },
         {
             "name": "drupal/devel",
