@@ -2528,7 +2528,7 @@
         "dist": {
             "type": "path",
             "url": "../../blt",
-            "reference": "5fbd030ec836ef07cb2c8b20809bce76883315ff",
+            "reference": "cb9fcf46595db35cb80965b5b5d43b3c1ab1e502",
             "shasum": null
         },
         "require": {
@@ -7921,18 +7921,18 @@
     },
     {
         "name": "drupal/cog",
-        "version": "1.4.0",
-        "version_normalized": "1.4.0.0",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupal.org/project/cog",
-            "reference": "8.x-1.4"
+            "reference": "8.x-1.5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/cog-8.x-1.4.zip",
-            "reference": "8.x-1.4",
-            "shasum": "4fdfcf16dbc3a3ff6324ca3e490618ad1d093f1c"
+            "url": "https://ftp.drupal.org/files/projects/cog-8.x-1.5.zip",
+            "reference": "8.x-1.5",
+            "shasum": "3752d23d777ae5977d408e839fa57f4794eba96f"
         },
         "require": {
             "drupal/core": "~8.0"
@@ -7943,8 +7943,8 @@
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
-                "version": "8.x-1.4",
-                "datestamp": "1486133583"
+                "version": "8.x-1.5",
+                "datestamp": "1487099883"
             }
         },
         "installation-source": "dist",
