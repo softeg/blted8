@@ -2528,7 +2528,7 @@
         "dist": {
             "type": "path",
             "url": "/home/travis/build/acquia/blt",
-            "reference": "9c4d461bb8c28a5deae6f83f40afda7c94e4ecab",
+            "reference": "f8e71c2ede96dfdb775fbc1aac38264ac88cb7db",
             "shasum": null
         },
         "require": {
@@ -6146,7 +6146,7 @@
             },
             "drupal": {
                 "version": "8.x-1.0",
-                "datestamp": "1485901983"
+                "datestamp": "1485902197"
             }
         },
         "installation-source": "dist",
