@@ -19,6 +19,44 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
     protected $commandFileInstance;
     protected $commandFactory;
 
+    function testOptionDefaultValue()
+    {
+        $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile;
+        $this->commandFactory = new AnnotatedCommandFactory();
+        $commandInfo = $this->commandFactory->createCommandInfo($this->commandFileInstance, 'defaultOptionOne');
+
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+        $this->assertEquals('default:option-one', $command->getName());
+        $this->assertEquals('default:option-one [--foo [FOO]]', $command->getSynopsis());
+
+        $this->assertInstanceOf('\Symfony\Component\Console\Command\Command', $command);
+
+        $input = new StringInput('default:option-one');
+        $this->assertRunCommandViaApplicationEquals($command, $input, 'Foo is 1');
+
+        $commandInfo = $this->commandFactory->createCommandInfo($this->commandFileInstance, 'defaultOptionTwo');
+
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+        $this->assertEquals('default:option-two', $command->getName());
+        $this->assertEquals('default:option-two [--foo [FOO]]', $command->getSynopsis());
+
+        $input = new StringInput('default:option-two');
+        $this->assertRunCommandViaApplicationEquals($command, $input, 'Foo is 2');
+
+        $commandInfo = $this->commandFactory->createCommandInfo($this->commandFileInstance, 'defaultOptionNone');
+
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+        $this->assertEquals('default:option-none', $command->getName());
+        $this->assertEquals('default:option-none [--foo FOO]', $command->getSynopsis());
+
+        $input = new StringInput('default:option-none --foo');
+        $this->assertRunCommandViaApplicationContains($command, $input, ['The "--foo" option requires a value.'], 1);
+    }
+
     /**
      * Test CommandInfo command annotation parsing.
      */
@@ -270,6 +308,41 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         // Manipulating $input does not work -- the changes are not effective.
         // The end result here should be 'qx y yqx y yqx y y'
         $this->assertRunCommandViaApplicationEquals($command, $input, 'betxyzbetxyz');
+    }
+
+    function testRequiredArrayOption()
+    {
+        $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile;
+        $this->commandFactory = new AnnotatedCommandFactory();
+        $commandInfo = $this->commandFactory->createCommandInfo($this->commandFileInstance, 'testRequiredArrayOption');
+
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+        $this->assertEquals('test:required-array-option [-a|--arr ARR]', $command->getSynopsis());
+
+        $input = new StringInput('test:required-array-option --arr=1 --arr=2 --arr=3');
+        $this->assertRunCommandViaApplicationEquals($command, $input, '1 2 3');
+
+        $input = new StringInput('test:required-array-option -a 1 -a 2 -a 3');
+        $this->assertRunCommandViaApplicationEquals($command, $input, '1 2 3');
+    }
+
+    function testArrayOption()
+    {
+        $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile;
+        $this->commandFactory = new AnnotatedCommandFactory();
+        $commandInfo = $this->commandFactory->createCommandInfo($this->commandFileInstance, 'testArrayOption');
+
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+        $this->assertEquals('test:array-option [-a|--arr [ARR]]', $command->getSynopsis());
+
+        $input = new StringInput('test:array-option');
+        $this->assertRunCommandViaApplicationEquals($command, $input, '1 2 3');
+
+        $input = new StringInput('test:array-option --arr=a --arr=b --arr=c');
+        $this->assertRunCommandViaApplicationEquals($command, $input, 'a b c');
+
+        $input = new StringInput('test:array-option -a a');
+        $this->assertRunCommandViaApplicationEquals($command, $input, 'a');
     }
 
     function testHookedCommand()
