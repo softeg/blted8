@@ -10,6 +10,7 @@ use Consolidation\TestUtils\ExampleCommandInfoAlterer;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -58,6 +59,55 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test CommandInfo command caching.
+     *
+     * Sequence:
+     *  - Create all of the command info objects from one class, caching them.
+     *  - Change the method name of one of the items in the cache to a non-existent method
+     *  - Restore all of the cached commandinfo objects
+     *  - Ensure that the non-existent method cached commandinfo was not created
+     *  - Ensure that the now-missing cached commandinfo was still created
+     *
+     * This tests both save/restore, plus adding a new command method to
+     * a class, and removing a command method from a class.
+     */
+    function testAnnotatedCommandCache()
+    {
+        $testCacheStore = new \Consolidation\TestUtils\InMemoryCacheStore();
+
+        $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile;
+        $this->commandFactory = new AnnotatedCommandFactory();
+        $this->commandFactory->setDataStore($testCacheStore);
+
+        // Make commandInfo objects for every command in the test commandfile.
+        // These will also be stored in our cache.
+        $commandInfoList = $this->commandFactory->getCommandInfoListFromClass($this->commandFileInstance);
+
+        $cachedClassName = get_class($this->commandFileInstance);
+
+        $this->assertTrue($testCacheStore->has($cachedClassName));
+
+        $cachedData = $testCacheStore->get($cachedClassName);
+        $this->assertFalse(empty($cachedData));
+        $this->assertTrue(array_key_exists('testArithmatic', $cachedData));
+
+        $alterCommandInfoCache = $cachedData['testArithmatic'];
+        unset($cachedData['testArithmatic']);
+        $alterCommandInfoCache['method_name'] = 'nonExistentMethod';
+        $cachedData[$alterCommandInfoCache['method_name']] = $alterCommandInfoCache;
+
+        $testCacheStore->set($cachedClassName, $cachedData);
+
+        $restoredCommandInfoList = $this->commandFactory->getCommandInfoListFromClass($this->commandFileInstance);
+
+        $rebuiltCachedData = $testCacheStore->get($cachedClassName);
+
+        $this->assertFalse(empty($rebuiltCachedData));
+        $this->assertTrue(array_key_exists('testArithmatic', $rebuiltCachedData));
+        $this->assertFalse(array_key_exists('nonExistentMethod', $rebuiltCachedData));
+    }
+
+    /**
      * Test CommandInfo command annotation parsing.
      */
     function testAnnotatedCommandCreation()
@@ -73,7 +123,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertEquals('This is the test:arithmatic command', $command->getDescription());
         $this->assertEquals("This command will add one and two. If the --negate flag\nis provided, then the result is negated.", $command->getHelp());
         $this->assertEquals('arithmatic', implode(',', $command->getAliases()));
-        $this->assertEquals('test:arithmatic [--negate] [--] <one> <two>', $command->getSynopsis());
+        $this->assertEquals('test:arithmatic [--negate] [--unused [UNUSED]] [--] <one> [<two>]', $command->getSynopsis());
         $this->assertEquals('test:arithmatic 2 2 --negate', implode(',', $command->getUsages()));
 
         $input = new StringInput('arithmatic 2 3 --negate');
@@ -446,6 +496,22 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertRunCommandViaApplicationEquals($command, $input, '*** bar ***');
     }
 
+    function testDoubleDashWithVersion()
+    {
+        $this->commandFileInstance = new \Consolidation\TestUtils\ExampleHookAllCommandFile();
+        $this->commandFactory = new AnnotatedCommandFactory();
+        $commandInfo = $this->commandFactory->createCommandInfo($this->commandFileInstance, 'doCat');
+        $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
+
+        $input = new ArgvInput(['placeholder', 'do:cat', 'one', '--', '--version']);
+        list($statusCode, $commandOutput) = $this->runCommandViaApplication($command, $input);
+
+        if ($commandOutput == 'TestApplication version 0.0.0') {
+            $this->markTestSkipped('Symfony/Console 2.x does not respect -- with --version');
+        }
+        $this->assertEquals('one--version', $commandOutput);
+    }
+
     function testAnnotatedHookedCommand()
     {
         $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile();
@@ -512,7 +578,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $annotationData = $commandInfo->getRawAnnotations();
         $this->assertEquals('addmycommandname', implode(',', $annotationData->keys()));
         $annotationData = $commandInfo->getAnnotations();
-        $this->assertEquals('addmycommandname,command,_path', implode(',', $annotationData->keys()));
+        $this->assertEquals('addmycommandname,command,_path,_classname', implode(',', $annotationData->keys()));
 
         $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
 
@@ -522,7 +588,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $input = new StringInput('alter:me-too');
         $this->assertRunCommandViaApplicationEquals($command, $input, 'fantabulous from alter:me-too');
     }
-
 
     function testHookedCommandWithHookAddedLater()
     {

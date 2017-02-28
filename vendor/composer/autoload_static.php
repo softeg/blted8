@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdcbcd619346508abcf543bc99b03806d
+class ComposerStaticInit840863ae08c85a18bec19013aa4233ce
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -703,6 +703,9 @@ class ComposerStaticInitdcbcd619346508abcf543bc99b03806d
         'Consolidation\\AnnotatedCommand\\AnnotatedCommand' => __DIR__ . '/..' . '/consolidation/annotated-command/src/AnnotatedCommand.php',
         'Consolidation\\AnnotatedCommand\\AnnotatedCommandFactory' => __DIR__ . '/..' . '/consolidation/annotated-command/src/AnnotatedCommandFactory.php',
         'Consolidation\\AnnotatedCommand\\AnnotationData' => __DIR__ . '/..' . '/consolidation/annotated-command/src/AnnotationData.php',
+        'Consolidation\\AnnotatedCommand\\Cache\\CacheWrapper' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Cache/CacheWrapper.php',
+        'Consolidation\\AnnotatedCommand\\Cache\\NullCache' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Cache/NullCache.php',
+        'Consolidation\\AnnotatedCommand\\Cache\\SimpleCacheInterface' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Cache/SimpleCacheInterface.php',
         'Consolidation\\AnnotatedCommand\\CommandCreationListener' => __DIR__ . '/..' . '/consolidation/annotated-command/src/CommandCreationListener.php',
         'Consolidation\\AnnotatedCommand\\CommandCreationListenerInterface' => __DIR__ . '/..' . '/consolidation/annotated-command/src/CommandCreationListenerInterface.php',
         'Consolidation\\AnnotatedCommand\\CommandData' => __DIR__ . '/..' . '/consolidation/annotated-command/src/CommandData.php',
@@ -717,6 +720,15 @@ class ComposerStaticInitdcbcd619346508abcf543bc99b03806d
         'Consolidation\\AnnotatedCommand\\Help\\HelpDocument' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Help/HelpDocument.php',
         'Consolidation\\AnnotatedCommand\\Help\\HelpDocumentAlter' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Help/HelpDocumentAlter.php',
         'Consolidation\\AnnotatedCommand\\Hooks\\AlterResultInterface' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/AlterResultInterface.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\CommandEventHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/CommandEventHookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\ExtracterHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/ExtracterHookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\HookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/HookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\InitializeHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/InitializeHookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\InteractHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/InteractHookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\OptionsHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/OptionsHookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\ProcessResultHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/ProcessResultHookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\StatusDeterminerHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/StatusDeterminerHookDispatcher.php',
+        'Consolidation\\AnnotatedCommand\\Hooks\\Dispatchers\\ValidateHookDispatcher' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/Dispatchers/ValidateHookDispatcher.php',
         'Consolidation\\AnnotatedCommand\\Hooks\\ExtractOutputInterface' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/ExtractOutputInterface.php',
         'Consolidation\\AnnotatedCommand\\Hooks\\HookManager' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/HookManager.php',
         'Consolidation\\AnnotatedCommand\\Hooks\\InitializeHookInterface' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Hooks/InitializeHookInterface.php',
@@ -731,6 +743,8 @@ class ComposerStaticInitdcbcd619346508abcf543bc99b03806d
         'Consolidation\\AnnotatedCommand\\Options\\PrepareTerminalWidthOption' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Options/PrepareTerminalWidthOption.php',
         'Consolidation\\AnnotatedCommand\\OutputDataInterface' => __DIR__ . '/..' . '/consolidation/annotated-command/src/OutputDataInterface.php',
         'Consolidation\\AnnotatedCommand\\Parser\\CommandInfo' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Parser/CommandInfo.php',
+        'Consolidation\\AnnotatedCommand\\Parser\\CommandInfoDeserializer' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Parser/CommandInfoDeserializer.php',
+        'Consolidation\\AnnotatedCommand\\Parser\\CommandInfoSerializer' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Parser/CommandInfoSerializer.php',
         'Consolidation\\AnnotatedCommand\\Parser\\DefaultsWithDescriptions' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Parser/DefaultsWithDescriptions.php',
         'Consolidation\\AnnotatedCommand\\Parser\\Internal\\AbstractCommandDocBlockParser' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Parser/Internal/AbstractCommandDocBlockParser.php',
         'Consolidation\\AnnotatedCommand\\Parser\\Internal\\CommandDocBlockParser2' => __DIR__ . '/..' . '/consolidation/annotated-command/src/Parser/Internal/CommandDocBlockParser2.php',
@@ -3725,6 +3739,7 @@ class ComposerStaticInitdcbcd619346508abcf543bc99b03806d
         'PHP_Token_NEW' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_C' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_SEPARATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_NULLSAFE_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NUM_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -5452,6 +5467,7 @@ class ComposerStaticInitdcbcd619346508abcf543bc99b03806d
         'Twig_Cache_Null' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Cache/Null.php',
         'Twig_Compiler' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Compiler.php',
         'Twig_CompilerInterface' => __DIR__ . '/..' . '/twig/twig/lib/Twig/CompilerInterface.php',
+        'Twig_ContainerRuntimeLoader' => __DIR__ . '/..' . '/twig/twig/lib/Twig/ContainerRuntimeLoader.php',
         'Twig_Environment' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Environment.php',
         'Twig_Error' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Error.php',
         'Twig_Error_Loader' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Error/Loader.php',
@@ -5923,10 +5939,10 @@ class ComposerStaticInitdcbcd619346508abcf543bc99b03806d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdcbcd619346508abcf543bc99b03806d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdcbcd619346508abcf543bc99b03806d::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdcbcd619346508abcf543bc99b03806d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdcbcd619346508abcf543bc99b03806d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$classMap;
 
         }, null, ClassLoader::class);
     }
