@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit840863ae08c85a18bec19013aa4233ce
+class ComposerStaticInitcc4945c222b79dfe7d09ac1ee21b81c8
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -4208,6 +4208,7 @@ class ComposerStaticInit840863ae08c85a18bec19013aa4233ce
         'Psy\\CodeCleaner\\CalledClassPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/CalledClassPass.php',
         'Psy\\CodeCleaner\\CodeCleanerPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/CodeCleanerPass.php',
         'Psy\\CodeCleaner\\ExitPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/ExitPass.php',
+        'Psy\\CodeCleaner\\FinalClassPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/FinalClassPass.php',
         'Psy\\CodeCleaner\\FunctionReturnInWriteContextPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/FunctionReturnInWriteContextPass.php',
         'Psy\\CodeCleaner\\ImplicitReturnPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/ImplicitReturnPass.php',
         'Psy\\CodeCleaner\\InstanceOfPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/InstanceOfPass.php',
@@ -5939,10 +5940,10 @@ class ComposerStaticInit840863ae08c85a18bec19013aa4233ce
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit840863ae08c85a18bec19013aa4233ce::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcc4945c222b79dfe7d09ac1ee21b81c8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcc4945c222b79dfe7d09ac1ee21b81c8::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitcc4945c222b79dfe7d09ac1ee21b81c8::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitcc4945c222b79dfe7d09ac1ee21b81c8::$classMap;
 
         }, null, ClassLoader::class);
     }

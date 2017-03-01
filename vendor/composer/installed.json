@@ -2534,7 +2534,7 @@
         "dist": {
             "type": "path",
             "url": "/home/travis/build/acquia/blt",
-            "reference": "d48bf356c8ce8499f1b56cd490cfa1b3e1b44e10",
+            "reference": "d2c441a5be51a6d225cb7f2d6b25dc578f0efa19",
             "shasum": null
         },
         "require": {
@@ -4339,22 +4339,22 @@
     },
     {
         "name": "guzzlehttp/guzzle",
-        "version": "6.2.2",
-        "version_normalized": "6.2.2.0",
+        "version": "6.2.3",
+        "version_normalized": "6.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60"
+            "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
-            "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+            "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
             "shasum": ""
         },
         "require": {
             "guzzlehttp/promises": "^1.0",
-            "guzzlehttp/psr7": "^1.3.1",
+            "guzzlehttp/psr7": "^1.4",
             "php": ">=5.5"
         },
         "require-dev": {
@@ -4362,7 +4362,7 @@
             "phpunit/phpunit": "^4.0",
             "psr/log": "^1.0"
         },
-        "time": "2016-10-08T15:01:37+00:00",
+        "time": "2017-02-28T22:50:30+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -8552,17 +8552,17 @@
     },
     {
         "name": "psy/psysh",
-        "version": "v0.8.1",
-        "version_normalized": "0.8.1.0",
+        "version": "v0.8.2",
+        "version_normalized": "0.8.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/bobthecow/psysh.git",
-            "reference": "701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a"
+            "reference": "97113db4107a4126bef933b60fea6dbc9f615d41"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a",
-            "reference": "701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a",
+            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/97113db4107a4126bef933b60fea6dbc9f615d41",
+            "reference": "97113db4107a4126bef933b60fea6dbc9f615d41",
             "shasum": ""
         },
         "require": {
@@ -8586,7 +8586,7 @@
             "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
             "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
         },
-        "time": "2017-01-15T17:54:13+00:00",
+        "time": "2017-03-01T00:13:29+00:00",
         "bin": [
             "bin/psysh"
         ],
@@ -8735,17 +8735,17 @@
     },
     {
         "name": "consolidation/annotated-command",
-        "version": "2.4.4",
-        "version_normalized": "2.4.4.0",
+        "version": "2.4.5",
+        "version_normalized": "2.4.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/consolidation/annotated-command.git",
-            "reference": "ccff73e46582a885ce4bb2c57bbd8ba4415dbd24"
+            "reference": "7c97c401ea81549779ce96d62f00d230ed5ff1d8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/ccff73e46582a885ce4bb2c57bbd8ba4415dbd24",
-            "reference": "ccff73e46582a885ce4bb2c57bbd8ba4415dbd24",
+            "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/7c97c401ea81549779ce96d62f00d230ed5ff1d8",
+            "reference": "7c97c401ea81549779ce96d62f00d230ed5ff1d8",
             "shasum": ""
         },
         "require": {
@@ -8762,7 +8762,7 @@
             "satooshi/php-coveralls": "^1.0",
             "squizlabs/php_codesniffer": "^2.7"
         },
-        "time": "2017-02-27T18:29:21+00:00",
+        "time": "2017-02-28T22:50:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

@@ -3712,6 +3712,7 @@ return array(
     'Psy\\CodeCleaner\\CalledClassPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/CalledClassPass.php',
     'Psy\\CodeCleaner\\CodeCleanerPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/CodeCleanerPass.php',
     'Psy\\CodeCleaner\\ExitPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/ExitPass.php',
+    'Psy\\CodeCleaner\\FinalClassPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/FinalClassPass.php',
     'Psy\\CodeCleaner\\FunctionReturnInWriteContextPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/FunctionReturnInWriteContextPass.php',
     'Psy\\CodeCleaner\\ImplicitReturnPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/ImplicitReturnPass.php',
     'Psy\\CodeCleaner\\InstanceOfPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/InstanceOfPass.php',
