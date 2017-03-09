@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita1cc56f1b6f43ff6de532d1ea69519d6
+class ComposerStaticInit44b47a913606ffc6c689b66ad03d92e9
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -527,7 +527,10 @@ class ComposerStaticInita1cc56f1b6f43ff6de532d1ea69519d6
         'Acquia\\Blt\\Update\\Updater' => __DIR__ . '/..' . '/acquia/blt/src/Update/Updater.php',
         'Acquia\\Blt\\Update\\Updates' => __DIR__ . '/..' . '/acquia/blt/src/Update/Updates.php',
         'Acquia\\LightningExtension\\Context\\BlockContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/BlockContext.behat.inc',
+        'Acquia\\LightningExtension\\Context\\CkEditorContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/CkEditorContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\DisplayModeContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/DisplayModeContext.behat.inc',
+        'Acquia\\LightningExtension\\Context\\EntityBrowserContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/EntityBrowserContext.behat.inc',
+        'Acquia\\LightningExtension\\Context\\FieldApiContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/FieldApiContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\PanelsInPlaceContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/PanelsInPlaceContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\UndoContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/UndoContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\UtilityContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/UtilityContext.behat.inc',
@@ -5943,10 +5946,10 @@ class ComposerStaticInita1cc56f1b6f43ff6de532d1ea69519d6
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita1cc56f1b6f43ff6de532d1ea69519d6::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita1cc56f1b6f43ff6de532d1ea69519d6::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita1cc56f1b6f43ff6de532d1ea69519d6::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInita1cc56f1b6f43ff6de532d1ea69519d6::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit44b47a913606ffc6c689b66ad03d92e9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit44b47a913606ffc6c689b66ad03d92e9::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit44b47a913606ffc6c689b66ad03d92e9::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit44b47a913606ffc6c689b66ad03d92e9::$classMap;
 
         }, null, ClassLoader::class);
     }

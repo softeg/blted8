@@ -5,7 +5,3 @@ Patches applied to this directory:
 Source: https://www.drupal.org/files/issues/panelizer-panels-ipe-tempstore-id.patch
 
 
-2664574 - Add support for Taxonomy Term entities
-Source: https://www.drupal.org/files/issues/2664574-26.patch
-
-

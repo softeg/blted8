@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @file
+ */
+
 namespace Drupal\panels_ipe\Form;
 
 use Drupal\Core\Form\FormBase;
@@ -16,7 +20,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a form for configuring a layout for use with the IPE.
- *
  */
 class PanelsIPELayoutForm extends FormBase {
 
@@ -125,7 +128,7 @@ class PanelsIPELayoutForm extends FormBase {
     if (empty(Element::getVisibleChildren($form['settings']))) {
       if ($current) {
         $form['settings'][] = [
-          '#markup' => $this->t('<h5>This layout does not provide any configuration.</h5>')
+          '#markup' => $this->t('<h5>This layout does not provide any configuration.</h5>'),
         ];
       }
       else {
@@ -213,7 +216,7 @@ class PanelsIPELayoutForm extends FormBase {
       // Wrap the region with a class/data attribute that our app can use.
       $region_name = Html::getClass("block-region-$id");
       $region_content[$id] = [
-        '#prefix' =>'<div class="' . $region_name . '" data-region-name="' . $id . '">',
+        '#prefix' => '<div class="' . $region_name . '" data-region-name="' . $id . '">',
         '#suffix' => '</div>',
       ];
 
