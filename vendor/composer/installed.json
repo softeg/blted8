@@ -2534,7 +2534,7 @@
         "dist": {
             "type": "path",
             "url": "/home/travis/build/acquia/blt",
-            "reference": "b284295eff6209d1df92175676c54dc4389425d6",
+            "reference": "b8edb89f393e987cc8de67d5623dd355f3a92e50",
             "shasum": null
         },
         "require": {
