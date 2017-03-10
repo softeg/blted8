@@ -52,3 +52,6 @@ modules:
     enable: [acquia_connector, shield]
     uninstall: [devel, views_ui]
 
+multisite:
+  name:
+    - default
