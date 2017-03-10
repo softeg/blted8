@@ -248,7 +248,6 @@
       <property name="drush.bin" value="${drush.bin} --include=../drush" override="true" />
       <!-- Environment parameter is used to determine which modules to toggle. On ACE, will be overridden by one of dev/stage/prod. -->
       <param name="environment" value="deploy"/>
-      <!-- Drush alias should be set to sites to update all sites. -->
       <property name="drush.alias" value=""/>
       <!-- Kill Drush uri, since we want to run updates against all sites. -->
       <property name="drush.uri" value="${deploy.site.name}"/>
