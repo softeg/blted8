@@ -12,7 +12,7 @@ deploy_updates() {
   export PATH=$repo_root/vendor/bin:$PATH
   cd $repo_root
 
-  blt deploy:update -Denvironment=$target_env
+  blt deploy:update -Denvironment=$target_env -Dblt.verbose=true
   if [ $? -ne 0 ]; then
       echo "Update errored."
       status=1;
@@ -30,7 +30,7 @@ deploy_install() {
   export PATH=$repo_root/vendor/bin:$PATH
   cd $repo_root
 
-  blt deploy:drupal:install -Denvironment=$target_env
+  blt deploy:drupal:install -Denvironment=$target_env -Dblt.verbose=true
   if [ $? -ne 0 ]; then
       echo "Install errored."
       status=1;
