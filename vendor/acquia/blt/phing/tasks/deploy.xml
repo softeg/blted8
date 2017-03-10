@@ -243,6 +243,14 @@
   </target>
 
   <target name="deploy:update:site" description="Update current database to reflect the state of the Drupal file system; uses local drush alias.">
+
+    <if>
+      <equals arg1="${drush.uri}" arg2="default"/>
+      <then>
+        <property name="drush.uri" value="self" override="true"/>
+      </then>
+    </if>
+
     <phingcall target="setup:update">
       <!-- Drush fails to include some files. @see https://github.com/drush-ops/drush/issues/2497#issuecomment-279049111 -->
       <property name="drush.bin" value="${drush.bin} --include=../drush" override="true" />
