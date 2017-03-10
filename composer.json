@@ -98,7 +98,7 @@
         "bex/behat-screenshot": "^1.2",
         "se/selenium-server-standalone": "^2.53",
         "jakoch/phantomjs-installer": "^2.1.1-p07",
-        "geerlingguy/drupal-vm": "~4.2"
+        "geerlingguy/drupal-vm": "~4.3"
     },
     "scripts": {
         "blt-alias": "blt install-alias -Dcreate_alias=true",

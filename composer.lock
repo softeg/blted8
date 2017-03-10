@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "894b6a4589709b6fb68d96098679d844",
+    "content-hash": "bad5352bc6ac35b4b036a348c8c196ef",
     "packages": [
         {
             "name": "acquia/blt",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "/home/travis/build/acquia/blt",
-                "reference": "837ee2bffde9285782ff4ad9b99464899ec3a2f6",
+                "reference": "0fa0c3568305656a27bd12535401594e59f305c7",
                 "shasum": null
             },
             "require": {
@@ -9942,16 +9942,16 @@
         },
         {
             "name": "geerlingguy/drupal-vm",
-            "version": "4.2.1",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geerlingguy/drupal-vm.git",
-                "reference": "efefdb497ac5ecf4e375bdd1e5d8982f98a0b0ce"
+                "reference": "88017134bbdf402725fac8b789ae44b80333e668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/efefdb497ac5ecf4e375bdd1e5d8982f98a0b0ce",
-                "reference": "efefdb497ac5ecf4e375bdd1e5d8982f98a0b0ce",
+                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/88017134bbdf402725fac8b789ae44b80333e668",
+                "reference": "88017134bbdf402725fac8b789ae44b80333e668",
                 "shasum": ""
             },
             "type": "vm",
@@ -9977,7 +9977,7 @@
                 "virtual machine",
                 "vm"
             ],
-            "time": "2017-02-09T03:50:18+00:00"
+            "time": "2017-03-10T03:40:18+00:00"
         },
         {
             "name": "instaclick/php-webdriver",
