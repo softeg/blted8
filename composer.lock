@@ -4,16 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bad5352bc6ac35b4b036a348c8c196ef",
+    "content-hash": "3696bad33cdb4a1288f4c4290466257e",
     "packages": [
         {
             "name": "acquia/blt",
-            "version": "dev-master",
+            "version": "8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acquia/blt.git",
+                "reference": "9f7475a8757635f979f91cf32219ebf817b85663"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/travis/build/acquia/blt",
-                "reference": "ad6c8e53bb6ff9296cc4aa12cbf30cd6f171fff9",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/9f7475a8757635f979f91cf32219ebf817b85663",
+                "reference": "9f7475a8757635f979f91cf32219ebf817b85663",
+                "shasum": ""
             },
             "require": {
                 "asm89/twig-lint": "^1.0.2",
@@ -58,6 +63,7 @@
                     "Acquia\\Blt\\Tests\\": "tests/phpunit/src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0"
             ],
@@ -74,13 +80,7 @@
                 "template",
                 "testing"
             ],
-            "support": {
-                "issues": "https://github.com/acquia/blt/issues",
-                "docs": "http://blt.readthedocs.io/en/stable"
-            },
-            "transport-options": {
-                "symlink": true
-            }
+            "time": "2017-03-10 19:13:43"
         },
         {
             "name": "acquia/lightning",
@@ -10212,7 +10212,7 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
@@ -10378,7 +10378,7 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",

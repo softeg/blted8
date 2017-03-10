@@ -9,23 +9,16 @@
         }
     ],
     "repositories": {
-        "blt": {
-            "type": "path",
-            "url": "/home/travis/build/acquia/blt",
-            "options": {
-                "symlink": true
-            }
-        },
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
     },
     "require": {
-        "acquia/blt": "*@dev",
+        "acquia/blt": "8.x-dev#9f7475a8757635f979f91cf32219ebf817b85663",
         "acquia/lightning": "^2",
         "drupal/acquia_connector": "^1.5.0",
-        "drupal/acsf": "^1.33.0",
+        "drupal/acsf": "^1.32.0",
         "drupal/cog": "^1.0.0",
         "drupal/core": "^8.0",
         "drupal/features": "^3.0.0",

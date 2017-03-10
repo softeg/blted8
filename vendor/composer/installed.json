@@ -2529,13 +2529,18 @@
     },
     {
         "name": "acquia/blt",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "8.x-dev",
+        "version_normalized": "8.9999999.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/acquia/blt.git",
+            "reference": "9f7475a8757635f979f91cf32219ebf817b85663"
+        },
         "dist": {
-            "type": "path",
-            "url": "/home/travis/build/acquia/blt",
-            "reference": "ad6c8e53bb6ff9296cc4aa12cbf30cd6f171fff9",
-            "shasum": null
+            "type": "zip",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/9f7475a8757635f979f91cf32219ebf817b85663",
+            "reference": "9f7475a8757635f979f91cf32219ebf817b85663",
+            "shasum": ""
         },
         "require": {
             "asm89/twig-lint": "^1.0.2",
@@ -2566,6 +2571,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
+        "time": "2017-03-10T19:13:43+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -2574,13 +2580,14 @@
         "extra": {
             "class": "Acquia\\Blt\\Composer\\Plugin"
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "Acquia\\Blt\\": "src/",
                 "Acquia\\Blt\\Tests\\": "tests/phpunit/src/"
             }
         },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "GPL-2.0"
         ],
@@ -2596,14 +2603,7 @@
             "drupal",
             "template",
             "testing"
-        ],
-        "support": {
-            "issues": "https://github.com/acquia/blt/issues",
-            "docs": "http://blt.readthedocs.io/en/stable"
-        },
-        "transport-options": {
-            "symlink": true
-        }
+        ]
     },
     {
         "name": "clue/graph",
