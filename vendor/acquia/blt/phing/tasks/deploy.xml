@@ -247,7 +247,7 @@
       <!-- Drush alias should be set to sites to update all sites. -->
       <property name="drush.alias" value="sites"/>
       <!-- Kill Drush uri, since we want to run updates against all sites. -->
-      <property name="drush.uri" value=""/>
+      <!--<property name="drush.uri" value=""/>-->
       <!-- Most sites store their version-controlled configuration in /config/default. -->
       <!-- ACE internally sets the vcs configuration directory to /config/default, so we use that. -->
       <property name="cm.core.config-dir.key" value="${cm.core.config-dir.deploy-key}"/>

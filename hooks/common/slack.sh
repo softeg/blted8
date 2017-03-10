@@ -2,7 +2,7 @@
 
 FILE=$HOME/slack_settings
 
-if [ -e $FILE ]; then
+if [ -f $FILE ]; then
   # Load the Slack webhook URL (which is not stored in this repo).
   . $HOME/slack_settings
 
@@ -18,5 +18,5 @@ if [ -e $FILE ]; then
     fi
   fi
 else
-  echo "File $FILE does not exist."
+  echo "Notice: Slack notifications disabled: file $FILE does not exist."
 fi
