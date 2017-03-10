@@ -2,7 +2,7 @@
 
 FILE=$HOME/slack_settings
 
-if [ -f $FILE ]; then
+if [ -e $FILE ]; then
   # Load the Slack webhook URL (which is not stored in this repo).
   . $HOME/slack_settings
 
