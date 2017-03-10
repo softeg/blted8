@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "acquia/blt": "8.x-dev#9f7475a8757635f979f91cf32219ebf817b85663",
+        "acquia/blt": "8.x-dev#464e4c46e1984862b6d3c716bc284896c9e92ec1",
         "acquia/lightning": "^2",
         "drupal/acquia_connector": "^1.5.0",
         "drupal/acsf": "^1.32.0",
