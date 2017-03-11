@@ -185,16 +185,13 @@ function gardens_site_data_refresh_domains(array $domains) {
   $data = array();
   $json_read_failure = FALSE;
   foreach ($domains as $domain) {
+    $domain = trim($domain);
+    // Shell out to grep to find the relevant line of the json file.
+    exec(sprintf("grep %s %s --no-filename --color=never --context=0", escapeshellarg($domain), escapeshellarg($location)), $output_array, $exit_code);
+    $result = trim(implode("\n", $output_array));
 
-    if (file_exists($location)) {
-      $domain = trim($domain);
-      // Shell out to grep to find the relevant line of the json file.
-      exec(sprintf("grep %s %s --no-filename --color=never --context=0", escapeshellarg($domain), escapeshellarg($location)), $output_array, $exit_code);
-      $result = trim(implode("\n", $output_array));
-    }
-
-    if (empty($result) || !isset($result)) {
-      if (isset($exit_code) && $exit_code !== 0) {
+    if (empty($result)) {
+      if ($exit_code !== 0) {
         $json_read_failure = TRUE;
       }
       // Log an explicit fail in APC if we cannot find the domain, so that we

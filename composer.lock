@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9221646096202a26288f7d97afcd2abd",
+    "content-hash": "71e9ee898eb59a4f868f5f80dbcf4cfe",
     "packages": [
         {
             "name": "acquia/blt",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/blt.git",
-                "reference": "464e4c46e1984862b6d3c716bc284896c9e92ec1"
+                "reference": "9bb617cab571d9ec6a8a46d04441fed59153c1df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/blt/zipball/464e4c46e1984862b6d3c716bc284896c9e92ec1",
-                "reference": "464e4c46e1984862b6d3c716bc284896c9e92ec1",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/9bb617cab571d9ec6a8a46d04441fed59153c1df",
+                "reference": "9bb617cab571d9ec6a8a46d04441fed59153c1df",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "template",
                 "testing"
             ],
-            "time": "2017-03-10 19:45:55"
+            "time": "2017-03-11 01:49:41"
         },
         {
             "name": "acquia/lightning",
@@ -3837,7 +3837,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha5",
-                    "datestamp": "1453656839"
+                    "datestamp": "1489190883"
                 },
                 "patches_applied": {
                     "2674874 - Issue saving Schedule Update Type form": "https://www.drupal.org/files/issues/schedule_updates-save_type-2674874-2.patch",

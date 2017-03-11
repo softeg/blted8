@@ -2534,12 +2534,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "464e4c46e1984862b6d3c716bc284896c9e92ec1"
+            "reference": "9bb617cab571d9ec6a8a46d04441fed59153c1df"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/464e4c46e1984862b6d3c716bc284896c9e92ec1",
-            "reference": "464e4c46e1984862b6d3c716bc284896c9e92ec1",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/9bb617cab571d9ec6a8a46d04441fed59153c1df",
+            "reference": "9bb617cab571d9ec6a8a46d04441fed59153c1df",
             "shasum": ""
         },
         "require": {
@@ -2571,7 +2571,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-10T19:45:55+00:00",
+        "time": "2017-03-11T01:49:41+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -5549,7 +5549,7 @@
             },
             "drupal": {
                 "version": "8.x-1.0-alpha5",
-                "datestamp": "1453656839"
+                "datestamp": "1489190883"
             },
             "patches_applied": {
                 "2674874 - Issue saving Schedule Update Type form": "https://www.drupal.org/files/issues/schedule_updates-save_type-2674874-2.patch",
