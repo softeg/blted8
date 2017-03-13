@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "acquia/blt": "8.x-dev#9bb617cab571d9ec6a8a46d04441fed59153c1df",
+        "acquia/blt": "8.x-dev#c723c1cbf2ec2483d90fd3e01dd1a37cb1989cec",
         "acquia/lightning": "^2",
         "drupal/acquia_connector": "^1.5.0",
         "drupal/acsf": "^1.32.0",
@@ -77,6 +77,11 @@
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "Clear Twig caches on deploys": "https://www.drupal.org/files/issues/no_reliable_method-2752961-29.patch"
+            }
         }
     },
     "require-dev": {

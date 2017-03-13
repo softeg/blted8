@@ -2534,12 +2534,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "9bb617cab571d9ec6a8a46d04441fed59153c1df"
+            "reference": "c723c1cbf2ec2483d90fd3e01dd1a37cb1989cec"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/9bb617cab571d9ec6a8a46d04441fed59153c1df",
-            "reference": "9bb617cab571d9ec6a8a46d04441fed59153c1df",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/c723c1cbf2ec2483d90fd3e01dd1a37cb1989cec",
+            "reference": "c723c1cbf2ec2483d90fd3e01dd1a37cb1989cec",
             "shasum": ""
         },
         "require": {
@@ -2571,7 +2571,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-11T01:49:41+00:00",
+        "time": "2017-03-13T20:13:32+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -4102,17 +4102,17 @@
     },
     {
         "name": "paragonie/random_compat",
-        "version": "v2.0.9",
-        "version_normalized": "2.0.9.0",
+        "version": "v2.0.10",
+        "version_normalized": "2.0.10.0",
         "source": {
             "type": "git",
             "url": "https://github.com/paragonie/random_compat.git",
-            "reference": "6968531206671f94377b01dc7888d5d1b858a01b"
+            "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/6968531206671f94377b01dc7888d5d1b858a01b",
-            "reference": "6968531206671f94377b01dc7888d5d1b858a01b",
+            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
+            "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
             "shasum": ""
         },
         "require": {
@@ -4124,7 +4124,7 @@
         "suggest": {
             "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
-        "time": "2017-03-03T20:43:42+00:00",
+        "time": "2017-03-13T16:27:32+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4786,6 +4786,7 @@
         "type": "drupal-core",
         "extra": {
             "patches_applied": {
+                "Clear Twig caches on deploys": "https://www.drupal.org/files/issues/no_reliable_method-2752961-29.patch",
                 "2652138 - ImageFormatter does not support SVGs": "https://www.drupal.org/files/issues/2652138.patch",
                 "2765525 - Add AJAX command to add style sheets to CKEditor instances": "https://www.drupal.org/files/issues/2765525-30-8.2.x.patch"
             }
@@ -7118,17 +7119,17 @@
     },
     {
         "name": "ezyang/htmlpurifier",
-        "version": "v4.9.1",
-        "version_normalized": "4.9.1.0",
+        "version": "v4.9.2",
+        "version_normalized": "4.9.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/ezyang/htmlpurifier.git",
-            "reference": "de82f9845f2a0f9f27abec67d6a4958427e6f5d6"
+            "reference": "6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/de82f9845f2a0f9f27abec67d6a4958427e6f5d6",
-            "reference": "de82f9845f2a0f9f27abec67d6a4958427e6f5d6",
+            "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4",
+            "reference": "6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4",
             "shasum": ""
         },
         "require": {
@@ -7137,7 +7138,7 @@
         "require-dev": {
             "simpletest/simpletest": "^1.1"
         },
-        "time": "2017-03-08T08:22:36+00:00",
+        "time": "2017-03-13T06:30:53+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
