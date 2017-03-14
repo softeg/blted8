@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9345604a1d3fc297089f7186e7316f96
+class ComposerStaticInit56a09a25f33e213a1a93cf00f9f9ba65
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -47,6 +47,7 @@ class ComposerStaticInit9345604a1d3fc297089f7186e7316f96
         ),
         'W' => 
         array (
+            'Wikimedia\\Composer\\' => 19,
             'Webmozart\\PathUtil\\' => 19,
             'Webmozart\\Assert\\' => 17,
         ),
@@ -159,6 +160,10 @@ class ComposerStaticInit9345604a1d3fc297089f7186e7316f96
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'Wikimedia\\Composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src',
         ),
         'Webmozart\\PathUtil\\' => 
         array (
@@ -501,8 +506,6 @@ class ComposerStaticInit9345604a1d3fc297089f7186e7316f96
         'Acquia\\Blt\\Annotations\\Update' => __DIR__ . '/..' . '/acquia/blt/src/Annotations/Update.php',
         'Acquia\\Blt\\Composer\\Plugin' => __DIR__ . '/..' . '/acquia/blt/src/Composer/Plugin.php',
         'Acquia\\Blt\\Console\\Command\\BaseCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/BaseCommand.php',
-        'Acquia\\Blt\\Console\\Command\\ComposerMungeCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/ComposerMungeCommand.php',
-        'Acquia\\Blt\\Console\\Command\\ConfigurePhantomJsCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/ConfigurePhantomJsCommand.php',
         'Acquia\\Blt\\Console\\Command\\SchemaVersionCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/SchemaVersionCommand.php',
         'Acquia\\Blt\\Console\\Command\\UpdateCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/UpdateCommand.php',
         'Acquia\\Blt\\Console\\Command\\YamlMungeCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/YamlMungeCommand.php',
@@ -5666,6 +5669,13 @@ class ComposerStaticInit9345604a1d3fc297089f7186e7316f96
         'Webmozart\\PathUtil\\Path' => __DIR__ . '/..' . '/webmozart/path-util/src/Path.php',
         'Webmozart\\PathUtil\\Url' => __DIR__ . '/..' . '/webmozart/path-util/src/Url.php',
         'WikiPublishTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/WikiPublishTask.php',
+        'Wikimedia\\Composer\\Logger' => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src/Logger.php',
+        'Wikimedia\\Composer\\MergePlugin' => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src/MergePlugin.php',
+        'Wikimedia\\Composer\\Merge\\ExtraPackage' => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src/Merge/ExtraPackage.php',
+        'Wikimedia\\Composer\\Merge\\MissingFileException' => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src/Merge/MissingFileException.php',
+        'Wikimedia\\Composer\\Merge\\NestedArray' => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src/Merge/NestedArray.php',
+        'Wikimedia\\Composer\\Merge\\PluginState' => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src/Merge/PluginState.php',
+        'Wikimedia\\Composer\\Merge\\StabilityFlags' => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src/Merge/StabilityFlags.php',
         'Win32FileSystem' => __DIR__ . '/..' . '/phing/phing/classes/phing/system/io/Win32FileSystem.php',
         'WinNTFileSystem' => __DIR__ . '/..' . '/phing/phing/classes/phing/system/io/WinNTFileSystem.php',
         'WritableSelector' => __DIR__ . '/..' . '/phing/phing/classes/phing/types/selectors/WritableSelector.php',
@@ -5920,10 +5930,10 @@ class ComposerStaticInit9345604a1d3fc297089f7186e7316f96
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9345604a1d3fc297089f7186e7316f96::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9345604a1d3fc297089f7186e7316f96::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit9345604a1d3fc297089f7186e7316f96::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit9345604a1d3fc297089f7186e7316f96::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit56a09a25f33e213a1a93cf00f9f9ba65::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit56a09a25f33e213a1a93cf00f9f9ba65::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit56a09a25f33e213a1a93cf00f9f9ba65::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit56a09a25f33e213a1a93cf00f9f9ba65::$classMap;
 
         }, null, ClassLoader::class);
     }

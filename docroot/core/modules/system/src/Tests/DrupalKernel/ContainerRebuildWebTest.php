@@ -21,7 +21,7 @@ class ContainerRebuildWebTest extends WebTestBase {
    */
   public function testSetContainerRebuildWithDifferentDeploymentIdentifier() {
     $this->drupalGet('<front>');
-    $this->assertHeader('container_rebuild_indicator', \Drupal::VERSION);
+    $this->assertHeader('container_rebuild_indicator', FALSE);
 
     $this->writeSettings(['settings' => ['deployment_identifier' => (object) ['value' => 'new-identifier', 'required' => TRUE]]]);
 

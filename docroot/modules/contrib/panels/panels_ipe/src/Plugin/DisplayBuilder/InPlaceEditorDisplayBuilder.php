@@ -10,7 +10,6 @@ use Drupal\layout_plugin\Plugin\Layout\LayoutInterface;
 use Drupal\panels\Plugin\DisplayBuilder\StandardDisplayBuilder;
 use Drupal\panels\Plugin\DisplayVariant\PanelsDisplayVariant;
 use Drupal\panels\Storage\PanelsStorageManagerInterface;
-use Drupal\panels_ipe\TempStoreTrait;
 use Drupal\user\SharedTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -24,8 +23,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class InPlaceEditorDisplayBuilder extends StandardDisplayBuilder {
-
-  use TempStoreTrait;
 
   /**
    * @var \Drupal\user\SharedTempStore
@@ -145,7 +142,7 @@ class InPlaceEditorDisplayBuilder extends StandardDisplayBuilder {
     $settings['panels_display'] = [
       'storage_type' => $storage_type,
       'storage_id' => $storage_id,
-      'id' => $this->getTempStoreId($panels_display),
+      'id' => $panels_display->id(),
     ];
 
     // Inform the App of our saved state.
@@ -170,7 +167,7 @@ class InPlaceEditorDisplayBuilder extends StandardDisplayBuilder {
       $unsaved = FALSE;
 
       // If a temporary configuration for this variant exists, use it.
-      $temp_store_key = $this->getTempStoreId($panels_display);
+      $temp_store_key = $panels_display->id();
       if ($variant_config = $this->tempStore->get($temp_store_key)) {
         unset($variant_config['id']);
         $panels_display->setConfiguration($variant_config);

@@ -10,7 +10,6 @@ use Drupal\Core\Render\Element;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\layout_plugin\Plugin\Layout\LayoutPluginManagerInterface;
 use Drupal\panels\Plugin\DisplayVariant\PanelsDisplayVariant;
-use Drupal\panels_ipe\TempStoreTrait;
 use Drupal\user\SharedTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -19,8 +18,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  */
 class PanelsIPELayoutForm extends FormBase {
-
-  use TempStoreTrait;
 
   /**
    * @var \Drupal\Core\Render\RendererInterface $renderer
@@ -201,8 +198,7 @@ class PanelsIPELayoutForm extends FormBase {
     $this->panelsDisplay->setLayout($this->layout, $layout_config);
 
     // Update tempstore.
-    $temp_store_key = $this->getTempStoreId($panels_display);
-    $this->tempStore->set($temp_store_key, $panels_display->getConfiguration());
+    $this->tempStore->set($panels_display->id(), $panels_display->getConfiguration());
 
     $region_data = [];
     $region_content = [];

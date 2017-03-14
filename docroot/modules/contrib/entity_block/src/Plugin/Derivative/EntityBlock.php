@@ -2,6 +2,7 @@
 
 namespace Drupal\entity_block\Plugin\Derivative;
 
+use Drupal\Core\Entity\ContentEntityTypeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\Discovery\ContainerDeriverInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -72,8 +73,11 @@ class EntityBlock implements ContainerDeriverInterface {
    * {@inheritdoc}
    */
   public function getDerivativeDefinitions($base_plugin_definition) {
+
     foreach ($this->entityTypeManager->getDefinitions() as $entityDefinition) {
-      if ($entityDefinition->hasViewBuilderClass()) {
+
+      if ($entityDefinition instanceof ContentEntityTypeInterface) {
+
         $delta = $entityDefinition->id();
         $this->derivatives[$delta] = [
           'category' => 'Entity Block',

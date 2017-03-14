@@ -377,16 +377,3 @@ function template_preprocess_panelizer_view_mode(&$variables) {
   $panelizer_plugin->preprocessViewMode($variables, $entity, $panels_display, $view_mode);
 }
 
-/**
- * Implements hook_panels_ipe_tempstore_id_alter().
- */
-function panelizer_panels_ipe_tempstore_id_alter(&$id, PanelsDisplayVariant $panels_display) {
-  $contexts = $panels_display->getContexts();
-
-  if (!empty($contexts['@panelizer.entity_context:entity'])) {
-    $context = $contexts['@panelizer.entity_context:entity'];
-    if ($context->hasContextValue()) {
-      $id = $context->getContextValue()->uuid();
-    }
-  }
-}

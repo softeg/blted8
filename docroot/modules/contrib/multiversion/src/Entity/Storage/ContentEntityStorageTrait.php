@@ -157,8 +157,11 @@ trait ContentEntityStorageTrait {
    * {@inheritdoc}
    */
   protected function doPreSave(EntityInterface $entity) {
-    if (!$entity->isNew() && !isset($entity->original)) {
-      $entity->original = $this->loadUnchanged($entity->originalId ?: $entity->id());
+    if (!$entity->isNew() && !isset($entity->original) && $entity->originalId) {
+      $entity->original = $this->loadUnchanged($entity->originalId);
+    }
+    elseif (!$entity->isNew() && !isset($entity->original)) {
+      $entity->original = $entity;
     }
     parent::doPreSave($entity);
   }

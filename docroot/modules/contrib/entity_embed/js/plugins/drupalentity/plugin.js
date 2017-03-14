@@ -109,8 +109,7 @@
             base: element.getId(),
             element: element.$,
             url: Drupal.url('embed/preview/' + editor.config.drupal.format + '?' + $.param({
-              value: element.getOuterHtml(),
-              editor: editor.name
+              value: element.getOuterHtml()
             })),
             progress: {type: 'none'},
             // Use a custom event to trigger the call.

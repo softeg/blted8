@@ -40,7 +40,7 @@ class PhpStorageFactory {
     // Make sure all the necessary configuration values are set.
     $class = isset($configuration['class']) ? $configuration['class'] : 'Drupal\Component\PhpStorage\MTimeProtectedFileStorage';
     if (!isset($configuration['secret'])) {
-      $configuration['secret'] = Settings::getHashSalt() . Settings::get('deployment_identifier');
+      $configuration['secret'] = Settings::getHashSalt();
     }
     if (!isset($configuration['bin'])) {
       $configuration['bin'] = $name;
