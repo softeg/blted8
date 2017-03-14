@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\PanelizerEntityViewBuilder.
+ */
+
 namespace Drupal\panelizer;
 
 use Drupal\Core\Cache\CacheableMetadata;
@@ -260,9 +265,6 @@ class PanelizerEntityViewBuilder implements EntityViewBuilderInterface, EntityHa
    * {@inheritdoc}
    */
   public function view(EntityInterface $entity, $view_mode = 'full', $langcode = NULL) {
-    // Trigger hook_panelizer_pre_view_builder_alter().
-    $this->moduleHandler->alter('panelizer_pre_view_builder', $view_mode, $entity, $langcode);
-
     $displays = $this->collectRenderDisplays([$entity], $view_mode);
     $display = $displays[$entity->bundle()];
 
@@ -277,7 +279,7 @@ class PanelizerEntityViewBuilder implements EntityViewBuilderInterface, EntityHa
   /**
    * {@inheritdoc}
    */
-  public function viewMultiple(array $entities = [], $view_mode = 'full', $langcode = NULL) {
+  public function viewMultiple(array $entities = array(), $view_mode = 'full', $langcode = NULL) {
     $displays = $this->collectRenderDisplays($entities, $view_mode);
 
     $panelized_entities = [];
@@ -313,14 +315,14 @@ class PanelizerEntityViewBuilder implements EntityViewBuilderInterface, EntityHa
   /**
    * {@inheritdoc}
    */
-  public function viewField(FieldItemListInterface $items, $display_options = []) {
+  public function viewField(FieldItemListInterface $items, $display_options = array()) {
     return $this->getFallbackViewBuilder()->viewfield($items, $display_options);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function viewFieldItem(FieldItemInterface $item, $display = []) {
+  public function viewFieldItem(FieldItemInterface $item, $display = array()) {
     return $this->getFallbackViewBuilder()->viewFieldItem($item, $display);
   }
 
@@ -355,10 +357,10 @@ class PanelizerEntityViewBuilder implements EntityViewBuilderInterface, EntityHa
       $build[$id] = $this->buildPanelized($entity, $panels_display, $view_mode, $langcode);
 
       // Allow modules to modify the render array.
-      $alter_types = [
+      $alter_types = array(
         "{$this->entityTypeId}_view",
         'entity_view',
-      ];
+      );
       $this->moduleHandler->alter($alter_types, $build[$id], $entity, $displays[$entity->bundle()]);
     }
 

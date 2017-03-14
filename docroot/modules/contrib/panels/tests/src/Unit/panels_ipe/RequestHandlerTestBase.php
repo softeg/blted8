@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @file
- */
-
 namespace Drupal\Tests\panels\Unit\panels_ipe;
 
 
@@ -21,31 +17,23 @@ use Symfony\Component\HttpFoundation\Request;
  */
 abstract class RequestHandlerTestBase extends \PHPUnit_Framework_TestCase {
 
-  /**
-   * @var  \Drupal\panels_ipe\Helpers\RequestHandlerInterface */
-
   use RandomGeneratorTrait;
+
+  /** @var  \Drupal\panels_ipe\Helpers\RequestHandlerInterface */
   protected $sut;
 
-  /**
-   * @var PHPUnit_Framework_MockObject_MockObject */
+  /** @var PHPUnit_Framework_MockObject_MockObject */
   protected $moduleHandler;
 
-  /**
-   * @var PHPUnit_Framework_MockObject_MockObject */
+  /** @var PHPUnit_Framework_MockObject_MockObject */
   protected $panelsStore;
 
-  /**
-   * @var PHPUnit_Framework_MockObject_MockObject */
+  /** @var PHPUnit_Framework_MockObject_MockObject */
   protected $tempStore;
 
-  /**
-   * @var PHPUnit_Framework_MockObject_MockObject */
+  /** @var PHPUnit_Framework_MockObject_MockObject */
   protected $panelsDisplay;
 
-  /**
-   *
-   */
   public function setUp() {
     parent::setUp();
     $this->moduleHandler = $this->getMockForAbstractClass(ModuleHandlerInterface::class);
@@ -76,5 +64,4 @@ abstract class RequestHandlerTestBase extends \PHPUnit_Framework_TestCase {
     $expected = new JsonResponse(['success' => FALSE], 400);
     $this->assertEquals($expected, $this->sut->getJsonResponse());
   }
-
 }

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Controller\PanelizerPanelsIPEController.
+ */
+
 namespace Drupal\panelizer\Controller;
 
 use Drupal\Component\Serialization\Json;

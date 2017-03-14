@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Access\ViewModeAccessCheck.
+ */
+
 namespace Drupal\panelizer\Access;
 
 use Drupal\Core\Routing\Access\AccessInterface;

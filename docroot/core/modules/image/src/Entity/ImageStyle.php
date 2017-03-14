@@ -14,7 +14,6 @@ use Drupal\image\ImageEffectInterface;
 use Drupal\image\ImageStyleInterface;
 use Drupal\Component\Utility\Crypt;
 use Drupal\Component\Utility\UrlHelper;
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\StreamWrapper\StreamWrapperInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
@@ -339,19 +338,6 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
     $this->getEffects()->removeInstanceId($effect->getUuid());
     $this->save();
     return $this;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function supportsUri($uri) {
-    // Only support the URI if its extension is supported by the current image
-    // toolkit.
-    return in_array(
-      Unicode::strtolower(pathinfo($uri, PATHINFO_EXTENSION)),
-      // @todo Inject the image.factory service.
-      \Drupal::service('image.factory')->getSupportedExtensions()
-    );
   }
 
   /**

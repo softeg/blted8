@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26
+class ComposerStaticInit32cc3f94b6f9b946bc05afadbe794cc5
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -367,17 +367,6 @@ class ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26
     );
 
     public static $prefixesPsr0 = array (
-        'v' => 
-        array (
-            'vierbergenlars\\SemVer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/vierbergenlars/php-semver/src',
-            ),
-            'vierbergenlars\\LibJs\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/vierbergenlars/php-semver/src',
-            ),
-        ),
         'p' => 
         array (
             'phpDocumentor' => 
@@ -514,6 +503,7 @@ class ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26
         'Acquia\\Blt\\Console\\Command\\BaseCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/BaseCommand.php',
         'Acquia\\Blt\\Console\\Command\\ComposerMungeCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/ComposerMungeCommand.php',
         'Acquia\\Blt\\Console\\Command\\ConfigurePhantomJsCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/ConfigurePhantomJsCommand.php',
+        'Acquia\\Blt\\Console\\Command\\SchemaVersionCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/SchemaVersionCommand.php',
         'Acquia\\Blt\\Console\\Command\\UpdateCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/UpdateCommand.php',
         'Acquia\\Blt\\Console\\Command\\YamlMungeCommand' => __DIR__ . '/..' . '/acquia/blt/src/Console/Command/YamlMungeCommand.php',
         'Acquia\\Blt\\Drush\\Command\\BltDoctor' => __DIR__ . '/..' . '/acquia/blt/src/Drush/Command/BltDoctorCommand.php',
@@ -527,10 +517,7 @@ class ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26
         'Acquia\\Blt\\Update\\Updater' => __DIR__ . '/..' . '/acquia/blt/src/Update/Updater.php',
         'Acquia\\Blt\\Update\\Updates' => __DIR__ . '/..' . '/acquia/blt/src/Update/Updates.php',
         'Acquia\\LightningExtension\\Context\\BlockContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/BlockContext.behat.inc',
-        'Acquia\\LightningExtension\\Context\\CkEditorContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/CkEditorContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\DisplayModeContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/DisplayModeContext.behat.inc',
-        'Acquia\\LightningExtension\\Context\\EntityBrowserContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/EntityBrowserContext.behat.inc',
-        'Acquia\\LightningExtension\\Context\\FieldApiContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/FieldApiContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\PanelsInPlaceContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/PanelsInPlaceContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\UndoContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/UndoContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\UtilityContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/UtilityContext.behat.inc',
@@ -5925,19 +5912,6 @@ class ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26
         'phpDocumentor\\Reflection\\DocBlock\\Tag\\VersionTag' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/VersionTag.php',
         'phpDocumentor\\Reflection\\DocBlock\\Type\\Collection' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Type/Collection.php',
         'rSTTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/rSTTask.php',
-        'vierbergenlars\\LibJs\\JSArray' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/LibJs/JSArray.php',
-        'vierbergenlars\\LibJs\\JString' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/LibJs/JString.php',
-        'vierbergenlars\\LibJs\\Object' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/LibJs/Object.php',
-        'vierbergenlars\\LibJs\\RegExp' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/LibJs/RegExp.php',
-        'vierbergenlars\\LibJs\\Util' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/LibJs/Util.php',
-        'vierbergenlars\\SemVer\\Internal\\Comparator' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/internal.php',
-        'vierbergenlars\\SemVer\\Internal\\Exports' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/internal.php',
-        'vierbergenlars\\SemVer\\Internal\\G' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/internal.php',
-        'vierbergenlars\\SemVer\\Internal\\Range' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/internal.php',
-        'vierbergenlars\\SemVer\\Internal\\SemVer' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/internal.php',
-        'vierbergenlars\\SemVer\\SemVerException' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/SemVerException.php',
-        'vierbergenlars\\SemVer\\expression' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/expression.php',
-        'vierbergenlars\\SemVer\\version' => __DIR__ . '/..' . '/vierbergenlars/php-semver/src/vierbergenlars/SemVer/version.php',
         'zsdtBaseTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/zendserverdeploymenttool/zsdtBaseTask.php',
         'zsdtPackTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/zendserverdeploymenttool/zsdtPackTask.php',
         'zsdtValidateTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/zendserverdeploymenttool/zsdtValidateTask.php',
@@ -5946,10 +5920,10 @@ class ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit57915a5c11a13a4b2cb1f7f592de0f26::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit32cc3f94b6f9b946bc05afadbe794cc5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit32cc3f94b6f9b946bc05afadbe794cc5::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit32cc3f94b6f9b946bc05afadbe794cc5::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit32cc3f94b6f9b946bc05afadbe794cc5::$classMap;
 
         }, null, ClassLoader::class);
     }

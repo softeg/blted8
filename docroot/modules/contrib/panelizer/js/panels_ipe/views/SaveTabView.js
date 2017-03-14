@@ -4,6 +4,7 @@
  */
 
 (function ($, _, Backbone, Drupal) {
+
   'use strict';
 
   Drupal.panelizer.panels_ipe.SaveTabView = Backbone.View.extend(/** @lends Drupal.panelizer.panels_ipe.SaveTabView# */{
@@ -11,21 +12,10 @@
     /**
      * @type {function}
      */
-    template: function() {
-      var saveButtons = '';
-
-      // Don't show the 'save as default' button if the user doesn't have
-      // permission.
-      if (drupalSettings.panelizer.user_permission.save_default) {
-        saveButtons += '<div class="panelizer-ipe-save-button"><a class="panelizer-ipe-save-custom" href="#">Save as custom</a></div>';
-        saveButtons += '<div class="panelizer-ipe-save-button"><a class="panelizer-ipe-save-default" href="#">Save as default</a></div>';
-      }
-      else {
-        saveButtons += '<div class="panelizer-ipe-save-button"><a class="panelizer-ipe-save-custom" href="#">Save</a></div>';
-      }
-
-      return saveButtons;
-    },
+    template: _.template(
+      '<div class="panelizer-ipe-save-button"><a class="panelizer-ipe-save-custom" href="#">Save as custom</a></div>' +
+      '<div class="panelizer-ipe-save-button"><a class="panelizer-ipe-save-default" href="#">Save as default</a></div>'
+    ),
 
     /**
      * @type {Drupal.panels_ipe.AppModel}
@@ -61,10 +51,7 @@
           this._save('panelizer_field');
         }
         else if (!entity.panelizer_field_storage_id) {
-          // Only if the user has permission.
-          if (drupalSettings.panelizer.user_permission.save_default) {
-            this._save('panelizer_default');
-          }
+          this._save('panelizer_default');
         }
       }
     },

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Form\PanelizerDefaultDelete.
+ */
+
 namespace Drupal\panelizer\Form;
 
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
@@ -11,9 +16,6 @@ use Drupal\panelizer\PanelizerInterface;
 use Drupal\panels\PanelsDisplayManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-/**
- *
- */
 class PanelizerDefaultDelete extends ConfirmFormBase {
 
   /**

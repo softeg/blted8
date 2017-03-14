@@ -3,9 +3,9 @@
 namespace Drupal\lightning_core\Form;
 
 use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\Config;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * The settings form for controlling Lightning Core's behavior.
  */
-class SettingsForm extends ConfigFormBase {
+class SettingsForm extends FormBase {
 
   /**
    * The user role entity storage handler.
@@ -40,20 +40,19 @@ class SettingsForm extends ConfigFormBase {
   /**
    * SettingsForm constructor.
    *
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The config factory.
    * @param \Drupal\Core\Entity\EntityStorageInterface $role_storage
    *   The user role entity storage handler.
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The currently logged-in user.
+   * @param \Drupal\Core\Config\Config $config
+   *   The config object being edited.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $translator
    *   (optional) The string translation service.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, EntityStorageInterface $role_storage, AccountInterface $current_user, TranslationInterface $translator = NULL) {
-    parent::__construct($config_factory);
+  public function __construct(EntityStorageInterface $role_storage, AccountInterface $current_user, Config $config, TranslationInterface $translator = NULL) {
     $this->roleStorage = $role_storage;
     $this->currentUser = $current_user;
-    $this->config = $this->config('lightning_core.settings');
+    $this->config = $config;
     $this->stringTranslation = $translator;
   }
 
@@ -62,18 +61,11 @@ class SettingsForm extends ConfigFormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('config.factory'),
       $container->get('entity_type.manager')->getStorage('user_role'),
       $container->get('current_user'),
+      $container->get('config.factory')->getEditable('lightning_core.settings'),
       $container->get('string_translation')
     );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function getEditableConfigNames() {
-    return ['lightning_core.settings'];
   }
 
   /**
@@ -109,7 +101,15 @@ class SettingsForm extends ConfigFormBase {
     }
     $form['content_roles']['#tree'] = TRUE;
 
-    return parent::buildForm($form, $form_state);
+    $form['actions'] = [
+      '#type' => 'actions',
+      'submit' => [
+        '#type' => 'submit',
+        '#value' => $this->t('Save configuration'),
+      ],
+    ];
+
+    return $form;
   }
 
   /**
@@ -123,15 +123,13 @@ class SettingsForm extends ConfigFormBase {
     }
 
     $this->config->set('content_roles', $roles)->save();
-
-    parent::submitForm($form, $form_state);
   }
 
   /**
    * Allows access if the user has any administrative role.
    *
    * @return \Drupal\Core\Access\AccessResult
-   *   Whether access is allowed.
+   *   Whether access is allowed or not.
    */
   public function access() {
     $roles = $this->currentUser->getRoles(TRUE);

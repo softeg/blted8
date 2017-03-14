@@ -1,6 +1,12 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\PanelizerInterface
+ */
+
 namespace Drupal\panelizer;
+
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;

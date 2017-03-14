@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer_test\Plugin\Block\PanelizerTestBlock
+ */
+
 namespace Drupal\panelizer_test\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;

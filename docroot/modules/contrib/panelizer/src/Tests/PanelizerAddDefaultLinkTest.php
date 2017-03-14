@@ -43,9 +43,9 @@ class PanelizerAddDefaultLinkTest extends WebTestBase {
 
   public function test() {
     $this->panelize('page');
-    $this->assertLink('Add a new Panelizer default display');
+    $this->assertLink('Add panelizer default');
     $this->unpanelize('page');
-    $this->assertNoLink('Add a new Panelizer default display');
+    $this->assertNoLink('Add panelizer default');
   }
 
 }

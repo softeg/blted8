@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Plugin\PanelsPattern\PanelizerPattern.
+ */
+
 namespace Drupal\panelizer\Plugin\PanelsPattern;
 
 use Drupal\Core\Plugin\Context\Context;

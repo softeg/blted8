@@ -15,8 +15,8 @@
         }
     },
     "require": {
-        "acquia/blt": "8.x-dev#c723c1cbf2ec2483d90fd3e01dd1a37cb1989cec",
-        "acquia/lightning": "^2",
+        "acquia/blt": "8.x-dev#1f291a74296a9ddff307890a3720c76a2c8b0bb5",
+        "acquia/lightning": "2.0.3",
         "drupal/acquia_connector": "^1.5.0",
         "drupal/acsf": "^1.32.0",
         "drupal/cog": "^1.0.0",

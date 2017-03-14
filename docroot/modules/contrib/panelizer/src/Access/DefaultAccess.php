@@ -1,14 +1,16 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Access\DefaultAccess.
+ */
+
 namespace Drupal\panelizer\Access;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\Access\AccessInterface;
 use Drupal\panelizer\PanelizerInterface;
 
-/**
- *
- */
 class DefaultAccess implements AccessInterface {
 
   /**

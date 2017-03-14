@@ -5,8 +5,6 @@
  * Contains \MediaLibrarySubContext.
  */
 
-use Acquia\LightningExtension\Context\CkEditorContext;
-use Acquia\LightningExtension\Context\EntityBrowserContext;
 use Drupal\DrupalExtension\Context\DrupalSubContextBase;
 
 /**
@@ -62,9 +60,9 @@ class MediaLibrarySubContext extends DrupalSubContextBase {
    * @When I open the media browser
    */
   public function openMediaBrowser($button = 'media_browser') {
-    $this
-      ->getContext(CkEditorContext::class)
-      ->execute('editdrupalentity', NULL, ['id' => $button]);
+    /** @var \CkEditorSubContext $ck_context */
+    $ck_context = $this->getContext('\CkEditorSubContext');
+    $ck_context->execute('editdrupalentity', NULL, ['id' => $button]);
 
     $this->minkContext->iWaitForAjaxToFinish();
     $frame = 'entity_browser_iframe_' . $button;
@@ -82,10 +80,13 @@ class MediaLibrarySubContext extends DrupalSubContextBase {
    */
   public function selectNthItem($n) {
     sleep(5);
+    $row = floor($n / 4) + 1;
+    $column = ($n % $row) + 1;
 
-    $this
-      ->getContext(EntityBrowserContext::class)
-      ->selectItem($n, 'media_browser');
+    $selector = '.view-media .row-' . $row . ' .col-' . $column;
+    /** @var \LightningSubContext $lightning */
+    $lightning = $this->getContext('\LightningSubContext');
+    $lightning->clickElementBySelector($selector);
   }
 
   /**
@@ -110,7 +111,7 @@ class MediaLibrarySubContext extends DrupalSubContextBase {
    */
   protected function awaitEntityForm() {
     $this->minkContext->iWaitForAjaxToFinish();
-    $this->awaitExpression('jQuery("#entity").children().length');
+    $this->awaitExpression('document.getElementById("ief-target").textContent.length');
   }
 
   /**
@@ -143,7 +144,7 @@ class MediaLibrarySubContext extends DrupalSubContextBase {
       ->elementExists('css', 'nav.eb-tabs ul li a[data-button-id="edit-tab-selector-8b142f33-59d1-47b1-9e3a-4ae85d8376fa"]')
       ->click();
 
-    $this->minkContext->fillField('input', $code);
+    $this->minkContext->fillField('embed_code', $code);
     // The change event, which triggers AJAX, is fired automatically after 600
     // milliseconds.
     sleep(1);

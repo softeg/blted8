@@ -109,10 +109,11 @@ class LayoutPluginSelector extends FormBase {
       $next_op = $wizard->getNextOp();
       $form_state->setValue('op', $next_op);
     }
-
-    $variant_plugin->setLayout($form_state->getValue('layout'), $form_state->getValue('layout_settings') ?: []);
-    $cached_values['plugin'] = $variant_plugin;
-
+    // When setting the layout for the first time, update the variant plugin.
+    else {
+      $variant_plugin->setLayout($form_state->getValue('layout'), $form_state->getValue('layout_settings') ?: []);
+      $cached_values['plugin'] = $variant_plugin;
+    }
     $form_state->setTemporaryValue('wizard', $cached_values);
   }
 

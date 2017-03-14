@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Tests\PanelizerTermFunctionalTest.
+ */
+
 namespace Drupal\panelizer\Tests;
 
 use Drupal\simpletest\WebTestBase;
@@ -48,13 +53,10 @@ class PanelizerTermFunctionalTest extends WebTestBase {
     ]);
     $this->drupalLogin($user);
 
-    $this->drupalGet('admin/structure/taxonomy/manage/tags/overview/display');
-    $edit = [
+    $this->drupalPostForm('admin/structure/taxonomy/manage/tags/overview/display', [
       'panelizer[enable]' => TRUE,
       'panelizer[custom]' => TRUE,
-    ];
-    $this->drupalPostForm(NULL, $edit, t('Save'));
-    $this->assertResponse(200);
+    ], 'Save');
     $this->rebuildAll();
   }
 
@@ -78,7 +80,6 @@ class PanelizerTermFunctionalTest extends WebTestBase {
     $term = $this->createTerm();
 
     $out = $this->drupalGet('taxonomy/term/' . $term->id());
-    $this->assertResponse(200);
     $this->verbose($out);
     $elements = $this->xpath('//*[@id="panels-ipe-content"]');
     if (is_array($elements)) {

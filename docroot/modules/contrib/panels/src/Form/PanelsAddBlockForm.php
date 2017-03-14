@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @file
- */
-
 namespace Drupal\panels\Form;
 
 use Drupal\Component\Plugin\PluginManagerInterface;
@@ -15,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Provides a form for adding a block plugin to a variant.
  */
-class PanelsAddBlockForm extends PanelsBlockConfigureFormBase {
+class PanelsAddBlockForm extends PanelsBlockConfigureFormBase   {
 
   /**
    * The block plugin manager.

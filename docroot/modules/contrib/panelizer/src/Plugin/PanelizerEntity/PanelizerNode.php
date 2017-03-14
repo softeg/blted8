@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Plugin\PanelizerEntity;
+ */
+
 namespace Drupal\panelizer\Plugin\PanelizerEntity;
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
@@ -50,10 +55,10 @@ class PanelizerNode extends PanelizerEntityBase {
     parent::alterBuild($build, $entity, $panels_display, $view_mode);
 
     if ($entity->id()) {
-      $build['#contextual_links']['node'] = [
-        'route_parameters' => ['node' => $entity->id()],
-        'metadata' => ['changed' => $entity->getChangedTime()],
-      ];
+      $build['#contextual_links']['node'] = array(
+        'route_parameters' =>array('node' => $entity->id()),
+        'metadata' => array('changed' => $entity->getChangedTime()),
+      );
     }
   }
 

@@ -1,13 +1,15 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Menu\AddDefaultLocalAction.
+ */
+
 namespace Drupal\panelizer\Menu;
 
 use Drupal\Core\Menu\LocalActionDefault;
 use Drupal\Core\Routing\RouteMatchInterface;
 
-/**
- *
- */
 class AddDefaultLocalAction extends LocalActionDefault {
 
   /**

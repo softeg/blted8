@@ -68,13 +68,9 @@ class PanelizerQuickEditTest extends JavascriptTestBase {
     $this->drupalLogin($user);
 
     // Enable Panelizer for Articles.
-    $this->drupalGet('admin/structure/types/manage/article/display');
-    $this->assertResponse(200);
-    $edit = [
+    $this->drupalPostForm('admin/structure/types/manage/article/display', [
       'panelizer[enable]' => TRUE,
-    ];
-    $this->drupalPostForm(NULL, $edit, t('Save'));
-    $this->assertResponse(200);
+    ], 'Save');
   }
 
   /**
@@ -107,7 +103,6 @@ class PanelizerQuickEditTest extends JavascriptTestBase {
 
     // Visit the new node.
     $this->drupalGet('node/' . $node->id());
-    $this->assertResponse(200);
 
     // This is the unique ID we append to normal Quick Edit field IDs.
     $panelizer_id = 'panelizer-full-block-id-' . $block_id;
@@ -138,7 +133,6 @@ class PanelizerQuickEditTest extends JavascriptTestBase {
 
     // Re-visit the node to make sure the edit worked.
     $this->drupalGet('node/' . $node->id());
-    $this->assertResponse(200);
     $this->assertSession()->pageTextContains('Hello world');
   }
 

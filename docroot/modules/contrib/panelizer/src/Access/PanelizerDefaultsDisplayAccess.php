@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\Controller\PanelizerDefaultsDisplayAccess.
+ */
+
 namespace Drupal\panelizer\Access;
 
 use Drupal\Core\Access\AccessResult;

@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @file
- */
-
 namespace Drupal\panels_ipe\Plugin\DisplayBuilder;
 
 use Drupal\Component\Utility\Html;
@@ -136,7 +132,7 @@ class InPlaceEditorDisplayBuilder extends StandardDisplayBuilder {
     $settings['layout'] = [
       'id' => $layout->getPluginId(),
       'label' => $layout_definition['label'],
-      'original' => TRUE,
+      'original' => true,
     ];
 
     // Add information about the current user's permissions.
@@ -187,6 +183,7 @@ class InPlaceEditorDisplayBuilder extends StandardDisplayBuilder {
 
       $regions = $panels_display->getRegionAssignments();
       $layout = $panels_display->getLayout();
+
 
       foreach ($regions as $region => $blocks) {
         // Wrap each region with a unique class and data attribute.

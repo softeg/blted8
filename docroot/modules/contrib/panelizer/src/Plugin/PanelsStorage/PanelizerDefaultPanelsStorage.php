@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\panelizer\PanelizerDefaultPanelsStorage
+ */
+
 namespace Drupal\panelizer\Plugin\PanelsStorage;
 
 use Drupal\Core\Access\AccessResult;

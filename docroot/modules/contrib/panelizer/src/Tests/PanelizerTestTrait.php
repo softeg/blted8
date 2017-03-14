@@ -22,13 +22,9 @@ trait PanelizerTestTrait {
    */
   protected function panelize($node_type, $display = NULL, array $values = []) {
     $this->drupalGet("admin/structure/types/manage/{$node_type}/display/{$display}");
-    $this->assertResponse(200);
 
-    $edit = [
-      'panelizer[enable]' => TRUE,
-    ] + $values;
-    $this->drupalPostForm(NULL, $edit, t('Save'));
-    $this->assertResponse(200);
+    $values['panelizer[enable]'] = TRUE;
+    $this->drupalPostForm(NULL, $values, 'Save');
 
     EntityFormDisplay::load('node.' . $node_type . '.default')
       ->setComponent('panelizer', [
@@ -51,13 +47,9 @@ trait PanelizerTestTrait {
    */
   protected function unpanelize($node_type, $display = NULL, array $values = []) {
     $this->drupalGet("admin/structure/types/manage/{$node_type}/display/{$display}");
-    $this->assertResponse(200);
 
-    $edit = [
-      'panelizer[enable]' => FALSE,
-    ] + $values;
-    $this->drupalPostForm(NULL, $edit, t('Save'));
-    $this->assertResponse(200);
+    $values['panelizer[enable]'] = FALSE;
+    $this->drupalPostForm(NULL, $values, 'Save');
 
     EntityFormDisplay::load('node.' . $node_type . '.default')
       ->removeComponent('panelizer')
@@ -68,38 +60,35 @@ trait PanelizerTestTrait {
     $label = $this->getRandomGenerator()->word(16);
     $id = strtolower($label);
     $default_id = "node__{$node_type}__{$display}__{$id}";
-    $options = [
-      'query' => [
+    $options = array(
+      'query' => array(
         'js' => 'nojs',
-      ],
-    ];
+      ),
+    );
 
     $this->drupalGet("admin/structure/types/manage/{$node_type}/display");
-    $this->assertResponse(200);
-    $this->clickLink('Add a new Panelizer default display');
+    $this->clickLink('Add panelizer default');
 
     // Step 1: Enter the default's label and ID.
-    $edit = [
+    $this->drupalPostForm(NULL, [
       'id' => $id,
       'label' => $label,
-    ];
-    $this->drupalPostForm(NULL, $edit, t('Next'));
-    $this->assertResponse(200);
+    ], 'Next');
 
     // Step 2: Define contexts.
-    $this->assertUrl("admin/structure/panelizer/add/{$default_id}/contexts", $options);
-    $this->drupalPostForm(NULL, [], t('Next'));
     $this->assertResponse(200);
+    $this->assertUrl("admin/structure/panelizer/add/{$default_id}/contexts", $options);
+    $this->drupalPostForm(NULL, [], 'Next');
 
     // Step 3: Select layout.
-    $this->assertUrl("admin/structure/panelizer/add/{$default_id}/layout", $options);
-    $this->drupalPostForm(NULL, [], t('Next'));
     $this->assertResponse(200);
+    $this->assertUrl("admin/structure/panelizer/add/{$default_id}/layout", $options);
+    $this->drupalPostForm(NULL, [], 'Next');
 
     // Step 4: Select content.
-    $this->assertUrl("admin/structure/panelizer/add/{$default_id}/content", $options);
-    $this->drupalPostForm(NULL, [], t('Finish'));
     $this->assertResponse(200);
+    $this->assertUrl("admin/structure/panelizer/add/{$default_id}/content", $options);
+    $this->drupalPostForm(NULL, [], 'Finish');
 
     return $id;
   }
@@ -116,9 +105,7 @@ trait PanelizerTestTrait {
    */
   protected function deletePanelizerDefault($node_type, $display = 'default', $id = 'default') {
     $this->drupalGet("admin/structure/panelizer/delete/node__{$node_type}__{$display}__{$id}");
-    $this->assertResponse(200);
-    $this->drupalPostForm(NULL, [], t('Confirm'));
-    $this->assertResponse(200);
+    $this->drupalPostForm(NULL, [], 'Confirm');
   }
 
   /**

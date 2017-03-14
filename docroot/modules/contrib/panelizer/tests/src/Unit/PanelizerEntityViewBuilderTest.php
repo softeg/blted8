@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\Tests\panelizer\Unit\PanelizerEntityViewBuilderTest.
+ */
+
 namespace Drupal\Tests\panelizer\Unit;
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
