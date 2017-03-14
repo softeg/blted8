@@ -2480,12 +2480,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "1f291a74296a9ddff307890a3720c76a2c8b0bb5"
+            "reference": "c544d9f751efedb78668479d1accf06cd52f4821"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/1f291a74296a9ddff307890a3720c76a2c8b0bb5",
-            "reference": "1f291a74296a9ddff307890a3720c76a2c8b0bb5",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/c544d9f751efedb78668479d1accf06cd52f4821",
+            "reference": "c544d9f751efedb78668479d1accf06cd52f4821",
             "shasum": ""
         },
         "require": {
@@ -2516,7 +2516,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-14T01:36:57+00:00",
+        "time": "2017-03-14T17:00:12+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -7883,18 +7883,18 @@
     },
     {
         "name": "drupal/cog",
-        "version": "1.5.0",
-        "version_normalized": "1.5.0.0",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupal.org/project/cog",
-            "reference": "8.x-1.5"
+            "reference": "8.x-1.6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/cog-8.x-1.5.zip",
-            "reference": "8.x-1.5",
-            "shasum": "3752d23d777ae5977d408e839fa57f4794eba96f"
+            "url": "https://ftp.drupal.org/files/projects/cog-8.x-1.6.zip",
+            "reference": "8.x-1.6",
+            "shasum": "0a8ce758e432c9727597171ecad4ad0a7e31a7bd"
         },
         "require": {
             "drupal/core": "~8.0"
@@ -7905,8 +7905,8 @@
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
-                "version": "8.x-1.5",
-                "datestamp": "1487099883"
+                "version": "8.x-1.6",
+                "datestamp": "1489502883"
             }
         },
         "installation-source": "dist",

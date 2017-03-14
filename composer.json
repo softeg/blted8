@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "acquia/blt": "8.x-dev#1f291a74296a9ddff307890a3720c76a2c8b0bb5",
+        "acquia/blt": "8.x-dev#c544d9f751efedb78668479d1accf06cd52f4821",
         "acquia/lightning": "2.0.3",
         "drupal/acquia_connector": "^1.5.0",
         "drupal/acsf": "^1.32.0",
@@ -71,7 +71,7 @@
             "docroot/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ],
-            "docroot/libraries": [
+            "docroot/libraries/{$name}": [
                 "type:drupal-library"
             ],
             "drush/contrib/{$name}": [
