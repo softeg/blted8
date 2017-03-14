@@ -11,7 +11,7 @@
     "repositories": {
         "blt": {
             "type": "path",
-            "url": "../blt",
+            "url": "/home/travis/build/acquia/blt",
             "options": {
                 "symlink": true
             }
