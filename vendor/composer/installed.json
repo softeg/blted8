@@ -2531,12 +2531,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "3beb1b89112be5f11cd30c8d83b36249538d555c"
+            "reference": "be291da747c8aa50db83ebb7350b820db217fa5f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/3beb1b89112be5f11cd30c8d83b36249538d555c",
-            "reference": "3beb1b89112be5f11cd30c8d83b36249538d555c",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/be291da747c8aa50db83ebb7350b820db217fa5f",
+            "reference": "be291da747c8aa50db83ebb7350b820db217fa5f",
             "shasum": ""
         },
         "require": {
@@ -2568,7 +2568,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-15T17:03:14+00:00",
+        "time": "2017-03-15T18:02:49+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
