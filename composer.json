@@ -11,7 +11,7 @@
     "repositories": {
         "blt": {
             "type": "path",
-            "url": "../blt",
+            "url": "/home/travis/build/acquia/blt",
             "options": {
                 "symlink": true
             }
@@ -30,15 +30,33 @@
             "merge-scripts": true
         },
         "installer-paths": {
-            "docroot/core": ["type:drupal-core"],
-            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
-            "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "docroot/profiles/custom/{$name}": ["type:drupal-custom-profile"],
-            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-            "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "docroot/libraries/{$name}": ["type:drupal-library"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
+            "docroot/core": [
+                "type:drupal-core"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "docroot/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "docroot/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
         }
     },
     "minimum-stability": "dev",
