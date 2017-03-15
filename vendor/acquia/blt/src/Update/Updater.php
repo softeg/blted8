@@ -70,6 +70,7 @@ class Updater {
     $this->setBltRoot($repo_root . '/vendor/acquia/blt');
     $this->composerJsonFilepath = $this->repoRoot . '/composer.json';
     $this->composerIncludeJsonFilepath = $this->getBltRoot() . '/composer.include.json';
+    $this->templateComposerJsonFilepath = $this->getBltRoot() . '/template/composer.json';
     $this->projectYmlFilepath = $this->repoRoot . '/blt/project.yml';
     $this->formatter = new FormatterHelper();
 
@@ -386,14 +387,30 @@ class Updater {
   }
 
   /**
+   * Returns template/composer.json content.
+   *
+   * @return array
+   *   The contents of template/composer.json.
+   */
+  public function getTemplateComposerJson() {
+    $template_composer_json = json_decode(file_get_contents($this->templateComposerJsonFilepath), TRUE);
+
+    return $template_composer_json;
+  }
+
+  /**
    * Writes an array to composer.json.
    *
    * @param array $contents
    *   The new contents of composer.json.
    */
   public function writeComposerJson($contents) {
-    $contents['require'] = (object) $contents['require'];
-    $contents['require-dev'] = (object) $contents['require-dev'];
+    if (!empty($contents['require']) && is_array($contents['require'])) {
+      $contents['require'] = (object) $contents['require'];
+    }
+    if (!empty($contents['require-dev']) && is_array($contents['require-dev'])) {
+      $contents['require-dev'] = (object) $contents['require-dev'];
+    }
     file_put_contents($this->composerJsonFilepath, json_encode($contents, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
   }
 
