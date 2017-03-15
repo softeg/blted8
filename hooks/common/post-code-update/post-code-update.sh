@@ -23,7 +23,7 @@ repo_type="$6"
 acsf_file="/mnt/files/$AH_SITE_GROUP.$AH_SITE_ENVIRONMENT/files-private/sites.json"
 if [ ! -f $acsf_file ]; then
   . /var/www/html/$site.$target_env/vendor/acquia/blt/scripts/cloud-hooks/functions.sh
-  deploy_updates
+  deploy_install
   . `dirname $0`/../slack.sh
   exit $status
 fi
