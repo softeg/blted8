@@ -9,16 +9,10 @@
         }
     ],
     "repositories": {
-        "blt": {
-            "type": "path",
-            "url": "/home/travis/build/acquia/blt",
-            "options": {
-                "symlink": true
-            }
-        }
     },
     "require": {
-        "acquia/blt": "*@dev"
+        "acquia/blt": "8.x-dev#be291da747c8aa50db83ebb7350b820db217fa5f",
+        "drupal/acsf": "^1.33.0"
     },
     "extra": {
         "merge-plugin": {
@@ -60,5 +54,8 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "geerlingguy/drupal-vm": "~4.3"
+    }
 }
