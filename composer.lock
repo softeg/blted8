@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2167f08efd777cb20441a33d32b78384",
+    "content-hash": "1536a77d5bea40e2221181370db1a9fc",
     "packages": [
         {
             "name": "acquia/blt",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/blt.git",
-                "reference": "e6423e3972b770db34640d801f79476e051c6ede"
+                "reference": "23b59bd5228e3c71f8556472f528db75ee4c89be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/blt/zipball/e6423e3972b770db34640d801f79476e051c6ede",
-                "reference": "e6423e3972b770db34640d801f79476e051c6ede",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/23b59bd5228e3c71f8556472f528db75ee4c89be",
+                "reference": "23b59bd5228e3c71f8556472f528db75ee4c89be",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "template",
                 "testing"
             ],
-            "time": "2017-03-16 02:06:09"
+            "time": "2017-03-16 13:41:23"
         },
         {
             "name": "acquia/lightning",
@@ -1395,17 +1395,17 @@
         },
         {
             "name": "drupal/acsf",
-            "version": "1.34.0",
+            "version": "1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/acsf",
-                "reference": "8.x-1.34"
+                "reference": "8.x-1.35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/acsf-8.x-1.34.zip",
-                "reference": "8.x-1.34",
-                "shasum": "b854e1b61cd72b26cf2215ed7a57f2eced15d27c"
+                "url": "https://ftp.drupal.org/files/projects/acsf-8.x-1.35.zip",
+                "reference": "8.x-1.35",
+                "shasum": "a2443e886d2abd50507114b442ed4a0c316d62d4"
             },
             "require": {
                 "drupal/acsf_duplication": "*",
@@ -1415,7 +1415,7 @@
             },
             "require-dev": {
                 "drupal/acsf_variables": "*",
-                "drupal/samlauth": "^2",
+                "drupal/samlauth": "^2.0.0-alpha1",
                 "mockery/mockery": "dev-master",
                 "phpunit/phpunit": "~5.3"
             },
@@ -1425,8 +1425,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.34",
-                    "datestamp": "1482323883"
+                    "version": "8.x-1.35",
+                    "datestamp": "1489664583"
                 }
             },
             "autoload": {
@@ -1489,7 +1489,7 @@
         },
         {
             "name": "drupal/acsf_duplication",
-            "version": "1.34.0",
+            "version": "1.35.0",
             "require": {
                 "drupal/acsf": "self.version",
                 "drupal/core": "~8.0"
@@ -1500,8 +1500,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.34",
-                    "datestamp": "1482323883"
+                    "version": "8.x-1.35",
+                    "datestamp": "1489664583"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1558,7 +1558,7 @@
         },
         {
             "name": "drupal/acsf_theme",
-            "version": "1.34.0",
+            "version": "1.35.0",
             "require": {
                 "drupal/acsf": "self.version",
                 "drupal/acsf_variables": "*",
@@ -1570,8 +1570,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.34",
-                    "datestamp": "1482323883"
+                    "version": "8.x-1.35",
+                    "datestamp": "1489664583"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1628,7 +1628,7 @@
         },
         {
             "name": "drupal/acsf_variables",
-            "version": "1.34.0",
+            "version": "1.35.0",
             "require": {
                 "drupal/acsf": "self.version",
                 "drupal/core": "~8.0"
@@ -1639,8 +1639,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.34",
-                    "datestamp": "1482323883"
+                    "version": "8.x-1.35",
+                    "datestamp": "1489664583"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
