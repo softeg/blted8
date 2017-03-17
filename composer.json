@@ -11,7 +11,7 @@
     "repositories": {
     },
     "require": {
-        "acquia/blt": "8.x-dev#a3366720f1fc30ed6e79c2bedeb44476753a0404",
+        "acquia/blt": "8.x-dev#f41c57bb588feb397866648da97b7635bf4f2633",
         "drupal/acsf": "^1.33.0"
     },
     "extra": {
