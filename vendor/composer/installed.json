@@ -2239,17 +2239,17 @@
     },
     {
         "name": "drupal/coder",
-        "version": "8.2.11",
-        "version_normalized": "8.2.11.0",
+        "version": "8.2.12",
+        "version_normalized": "8.2.12.0",
         "source": {
             "type": "git",
             "url": "https://github.com/klausi/coder.git",
-            "reference": "564a361274d8234d36385766f063ca89c4184479"
+            "reference": "984c54a7b1e8f27ff1c32348df69712afd86b17f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/klausi/coder/zipball/564a361274d8234d36385766f063ca89c4184479",
-            "reference": "564a361274d8234d36385766f063ca89c4184479",
+            "url": "https://api.github.com/repos/klausi/coder/zipball/984c54a7b1e8f27ff1c32348df69712afd86b17f",
+            "reference": "984c54a7b1e8f27ff1c32348df69712afd86b17f",
             "shasum": ""
         },
         "require": {
@@ -2261,7 +2261,7 @@
         "require-dev": {
             "phpunit/phpunit": ">=3.7 <6"
         },
-        "time": "2017-03-02T08:57:31+00:00",
+        "time": "2017-03-18T10:28:49+00:00",
         "type": "phpcodesniffer-standard",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -2861,12 +2861,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "8c99928613ac25e0c1c36efc70f89221ddb59f2b"
+            "reference": "6e29ea4d8ff1fa35eaebe1f12fec5d2eea5be9ed"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/8c99928613ac25e0c1c36efc70f89221ddb59f2b",
-            "reference": "8c99928613ac25e0c1c36efc70f89221ddb59f2b",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/6e29ea4d8ff1fa35eaebe1f12fec5d2eea5be9ed",
+            "reference": "6e29ea4d8ff1fa35eaebe1f12fec5d2eea5be9ed",
             "shasum": ""
         },
         "require": {
@@ -2898,7 +2898,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-17T17:00:59+00:00",
+        "time": "2017-03-19T18:45:08+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -8457,8 +8457,16 @@
                 "homepage": "https://www.drupal.org/user/229048"
             },
             {
+                "name": "badjava",
+                "homepage": "https://www.drupal.org/user/83372"
+            },
+            {
                 "name": "chx",
                 "homepage": "https://www.drupal.org/user/9446"
+            },
+            {
+                "name": "japerry",
+                "homepage": "https://www.drupal.org/user/45640"
             },
             {
                 "name": "kalman.hosszu",
@@ -9007,17 +9015,17 @@
     },
     {
         "name": "consolidation/annotated-command",
-        "version": "2.4.5",
-        "version_normalized": "2.4.5.0",
+        "version": "2.4.7",
+        "version_normalized": "2.4.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/consolidation/annotated-command.git",
-            "reference": "7c97c401ea81549779ce96d62f00d230ed5ff1d8"
+            "reference": "37dad31682b8333c00a84243acd81ad7da5933aa"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/7c97c401ea81549779ce96d62f00d230ed5ff1d8",
-            "reference": "7c97c401ea81549779ce96d62f00d230ed5ff1d8",
+            "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/37dad31682b8333c00a84243acd81ad7da5933aa",
+            "reference": "37dad31682b8333c00a84243acd81ad7da5933aa",
             "shasum": ""
         },
         "require": {
@@ -9025,7 +9033,7 @@
             "php": ">=5.4.0",
             "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
             "psr/log": "~1",
-            "symfony/console": "^2.8|~3",
+            "symfony/console": "^2.8 || >=3.0 <3.2.5",
             "symfony/event-dispatcher": "^2.5|~3",
             "symfony/finder": "^2.5|~3"
         },
@@ -9034,7 +9042,7 @@
             "satooshi/php-coveralls": "^1.0",
             "squizlabs/php_codesniffer": "^2.7"
         },
-        "time": "2017-02-28T22:50:54+00:00",
+        "time": "2017-03-18T00:43:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
