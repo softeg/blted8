@@ -2861,12 +2861,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "a789406c1b1062b97b487bfc15c8fc662e75ab2b"
+            "reference": "f7f5e0066bef330dd81846fa5e7ac45081df3992"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/a789406c1b1062b97b487bfc15c8fc662e75ab2b",
-            "reference": "a789406c1b1062b97b487bfc15c8fc662e75ab2b",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/f7f5e0066bef330dd81846fa5e7ac45081df3992",
+            "reference": "f7f5e0066bef330dd81846fa5e7ac45081df3992",
             "shasum": ""
         },
         "require": {
@@ -2898,7 +2898,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-20T15:49:24+00:00",
+        "time": "2017-03-20T20:40:01+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -4484,17 +4484,17 @@
     },
     {
         "name": "guzzlehttp/psr7",
-        "version": "1.4.1",
-        "version_normalized": "1.4.1.0",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/psr7.git",
-            "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855"
+            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/psr7/zipball/0d6c7ca039329247e4f0f8f8f6506810e8248855",
-            "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
             "shasum": ""
         },
         "require": {
@@ -4507,7 +4507,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2017-02-27T10:51:17+00:00",
+        "time": "2017-03-20T17:10:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
