@@ -2354,7 +2354,9 @@
                     "version": "8.x-1.0-beta2",
                     "datestamp": "1476698339"
                 },
-                "patches_applied": []
+                "patches_applied": {
+                    "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
+                }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
