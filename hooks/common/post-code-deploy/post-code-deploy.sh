@@ -19,6 +19,6 @@ repo_type="$6"
 
 
   . /var/www/html/$site.$target_env/vendor/acquia/blt/scripts/cloud-hooks/functions.sh
-  deploy_updates
+  deploy_install
   # Send notifications to Slack, if configured. See readme/deploy.md for setup instructions.
   . `dirname $0`/../slack.sh
