@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ee420b6cd216309a355c2035589424e",
+    "content-hash": "94848f652ab69833a863647c811799f6",
     "packages": [
         {
             "name": "acquia/blt",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/blt.git",
-                "reference": "e75d45ba48231052a243b0fc23663a668502e5ba"
+                "reference": "acf91fc3e6d4580fa5162961460d92182a5ef217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/blt/zipball/e75d45ba48231052a243b0fc23663a668502e5ba",
-                "reference": "e75d45ba48231052a243b0fc23663a668502e5ba",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/acf91fc3e6d4580fa5162961460d92182a5ef217",
+                "reference": "acf91fc3e6d4580fa5162961460d92182a5ef217",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "template",
                 "testing"
             ],
-            "time": "2017-03-20 13:30:06"
+            "time": "2017-03-20 13:29:32"
         },
         {
             "name": "acquia/lightning",
