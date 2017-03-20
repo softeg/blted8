@@ -21,5 +21,5 @@ repo_url="$5"
 repo_type="$6"
 
   . /var/www/html/$site.$target_env/vendor/acquia/blt/scripts/cloud-hooks/functions.sh
-  deploy_updates
+  deploy_install
   . `dirname $0`/../slack.sh
