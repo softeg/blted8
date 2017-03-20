@@ -2861,12 +2861,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "6e29ea4d8ff1fa35eaebe1f12fec5d2eea5be9ed"
+            "reference": "e75d45ba48231052a243b0fc23663a668502e5ba"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/6e29ea4d8ff1fa35eaebe1f12fec5d2eea5be9ed",
-            "reference": "6e29ea4d8ff1fa35eaebe1f12fec5d2eea5be9ed",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/e75d45ba48231052a243b0fc23663a668502e5ba",
+            "reference": "e75d45ba48231052a243b0fc23663a668502e5ba",
             "shasum": ""
         },
         "require": {
@@ -2898,7 +2898,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-19T18:45:08+00:00",
+        "time": "2017-03-20T13:30:06+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -8832,17 +8832,17 @@
     },
     {
         "name": "psy/psysh",
-        "version": "v0.8.2",
-        "version_normalized": "0.8.2.0",
+        "version": "v0.8.3",
+        "version_normalized": "0.8.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/bobthecow/psysh.git",
-            "reference": "97113db4107a4126bef933b60fea6dbc9f615d41"
+            "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/97113db4107a4126bef933b60fea6dbc9f615d41",
-            "reference": "97113db4107a4126bef933b60fea6dbc9f615d41",
+            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
+            "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
             "shasum": ""
         },
         "require": {
@@ -8866,7 +8866,7 @@
             "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
             "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
         },
-        "time": "2017-03-01T00:13:29+00:00",
+        "time": "2017-03-19T21:40:44+00:00",
         "bin": [
             "bin/psysh"
         ],
