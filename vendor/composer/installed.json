@@ -2861,12 +2861,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/acquia/blt.git",
-            "reference": "dd429e4097824f6efe146d3b7d55ade092874e97"
+            "reference": "19a943d3d618aada40360f5e307d9db09a8c5d54"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acquia/blt/zipball/dd429e4097824f6efe146d3b7d55ade092874e97",
-            "reference": "dd429e4097824f6efe146d3b7d55ade092874e97",
+            "url": "https://api.github.com/repos/acquia/blt/zipball/19a943d3d618aada40360f5e307d9db09a8c5d54",
+            "reference": "19a943d3d618aada40360f5e307d9db09a8c5d54",
             "shasum": ""
         },
         "require": {
@@ -2897,7 +2897,7 @@
         "suggest": {
             "hirak/prestissimo": "^0.3"
         },
-        "time": "2017-03-21T14:43:15+00:00",
+        "time": "2017-03-21T14:46:10+00:00",
         "bin": [
             "bin/blt",
             "bin/blt-console"
@@ -8419,6 +8419,9 @@
             "drupal": {
                 "version": "8.x-2.0-alpha2+2-dev",
                 "datestamp": "1475051939"
+            },
+            "patches_applied": {
+                "SASL Support in Drupal 8 version": "https://www.drupal.org/files/issues/sasl_drupal_8-2862230-3.patch"
             }
         },
         "installation-source": "source",
