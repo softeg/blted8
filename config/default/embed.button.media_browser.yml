@@ -1,9 +1,9 @@
-uuid: ec44f1b5-94c7-4e9a-bedd-dfe7e33298dc
+uuid: d55b0bd3-1ef2-4dcd-b301-840aa87a9b59
 langcode: en
 status: true
 dependencies:
   content:
-    - 'file:file:4c2620d6-3e69-485c-bb50-33e27ca3d42f'
+    - 'file:file:64d60479-3b7c-4d25-8122-f9cecf582c82'
   module:
     - entity_embed
     - media_entity
@@ -21,4 +21,4 @@ type_settings:
   entity_browser: media_browser
   entity_browser_settings:
     display_review: false
-icon_uuid: 4c2620d6-3e69-485c-bb50-33e27ca3d42f
+icon_uuid: 64d60479-3b7c-4d25-8122-f9cecf582c82
