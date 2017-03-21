@@ -1,4 +1,4 @@
-uuid: 644c627a-e7bc-4b4b-a673-687615f043ef
+uuid: c105366f-a94e-4362-92ef-097873173859
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,7 @@ dependencies:
     - field.field.block_content.basic.body
   module:
     - text
+    - workbench_moderation
 _core:
   default_config_hash: GAd7hovzsOttC5L0PaiDTGKalT2YHmbSm3Adn3aYl2M
 id: block_content.basic.default

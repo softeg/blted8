@@ -1,4 +1,4 @@
-uuid: 81213a97-e480-4b4a-8cef-4f5717c6fc91
+uuid: 20e2cd78-c4d2-46e8-b2d8-6d748e0e0f57
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ id: node.page.scheduled_update
 field_name: scheduled_update
 entity_type: node
 bundle: page
-label: 'Scheduled update'
+label: 'Scheduled updates'
 description: ''
 required: false
 translatable: true

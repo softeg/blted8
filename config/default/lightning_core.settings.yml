@@ -22,5 +22,6 @@ content_roles:
       - 'access content overview'
       - 'edit any ? content'
       - 'delete any ? content'
+      - 'view moderation states'
 _core:
   default_config_hash: 1D1VGtT9meAUY7K8zDShQJ8B6fDyUPzoAlUBXTiIWBU

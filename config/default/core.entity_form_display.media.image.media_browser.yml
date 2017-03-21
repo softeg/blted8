@@ -1,4 +1,4 @@
-uuid: b07970dc-9bd4-47b2-9989-75901af7875c
+uuid: ea2ce872-a422-43a5-a723-5093bb7e0459
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ dependencies:
     - image.style.medium
     - media_entity.bundle.image
   module:
-    - image
+    - lightning_media
     - workbench_moderation
 _core:
-  default_config_hash: LpTYmf5ylCEAcaqLWWOQBLTk-MsJ0QwXhUV3CnOocI0
+  default_config_hash: XAs-0xJN_RSqL0AwDm_5FnHvxR7U1H1asYTOBUKcnsE
 id: media.image.media_browser
 targetEntityType: media
 bundle: image
@@ -25,7 +25,7 @@ content:
       display_label: true
     third_party_settings: {  }
   image:
-    type: image_image
+    type: image_immutable
     weight: 0
     settings:
       preview_image_style: medium

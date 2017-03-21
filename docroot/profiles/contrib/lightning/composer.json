@@ -10,7 +10,7 @@
         "drupal/drupal-extension": "^3.2",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "behat/behat": "^3.0",
-        "drupal/coder": "8.*",
+        "drupal/coder": "^2.0",
         "phing/phing": "^2.14",
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
@@ -20,8 +20,15 @@
         "symfony/css-selector": "~2.8",
         "drupal/devel": "^1.0",
         "squizlabs/php_codesniffer": "2.*",
-        "se/selenium-server-standalone": "^2.53"
+        "se/selenium-server-standalone": "^2.53",
+        "drupal/console": "^1.0",
+        "jakoch/phantomjs-installer": "1.9.8",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "composer/composer": "^1.4"
     },
+    "bin": [
+      "lightning-subprofile"
+    ],
     "config": {
         "bin-dir": "bin/"
     },
@@ -33,6 +40,7 @@
     ],
     "scripts": {
         "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS",
             "@composer drupal-scaffold",
             "./bin/phing push"
         ],
@@ -40,7 +48,8 @@
             "./bin/phing push",
             "./bin/phing package"
         ],
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "release-version": "Acquia\\Lightning\\Composer\\ReleaseVersion::execute"
     },
     "extra": {
         "packagist.drupal-composer.org": {
@@ -57,25 +66,19 @@
         "patches": {
             "drupal/panelizer": {
                 "2793841 - Properly integrate with Panels IPE":
-                "https://www.drupal.org/files/issues/panelizer-panels-ipe-tempstore-id.patch",
-                "2664574 - Add support for Taxonomy Term entities":
-                "https://www.drupal.org/files/issues/2664574-26.patch"
+                "https://www.drupal.org/files/issues/panelizer-panels-ipe-tempstore-id.patch"
             },
             "drupal/panels": {
                 "2793801 - Allow modules to influence the IPE tempstore ID":
-                "https://www.drupal.org/files/issues/2793801-9.patch"
-            },
-            "drupal/scheduled_updates": {
-                "2674874 - Issue saving Schedule Update Type form":
-                "https://www.drupal.org/files/issues/schedule_updates-save_type-2674874-2.patch",
-                "2720169 - Scheduled Update Type entity should not have canonical link template":
-                "https://www.drupal.org/files/issues/scheduled_updates-no-canonical-link-for-update-type.patch"
+                "https://www.drupal.org/files/issues/2793801-13.patch"
             },
             "drupal/workbench_moderation": {
                 "2668006 - Provide logical access control for when IPE should be applied to moderated nodes":
                 "https://www.drupal.org/files/issues/2668006-2.patch",
                 "2847078 - Revision tracker's dynamic table creation can break Views":
-                "https://www.drupal.org/files/issues/2847078-6.patch"
+                "https://www.drupal.org/files/issues/2847078-6.patch",
+                "2749503 - Add basic support for Quick Edit":
+                "https://www.drupal.org/files/issues/workbench_moderation-quickedit-support-2749503-6.patch"
             },
             "drupal/multiversion": {
                 "2822915 - Migration source plugin makes bad assumptions that can lead to data loss":
@@ -85,6 +88,10 @@
                 "2844998 - multiversion_views_post_execute() triggers a warning for Search API views":
                 "https://www.drupal.org/files/issues/2844998-2.patch"
             },
+            "drupal/workspace": {
+                "2842897 - Rawurlencode() expects parameter 1 to be string, object given":
+                "https://www.drupal.org/files/issues/missing_hook_help-2833677-5.patch"
+            },
             "drupal/replication": {
                 "2814055 - Allow modules to react to replication events":
                 "https://www.drupal.org/files/issues/2814055-2.patch",
@@ -93,9 +100,11 @@
             },
             "drupal/core": {
                 "2652138 - ImageFormatter does not support SVGs":
-                "https://www.drupal.org/files/issues/2652138-28.patch",
+                "https://www.drupal.org/files/issues/2652138.patch",
                 "2765525 - Add AJAX command to add style sheets to CKEditor instances":
-                "https://www.drupal.org/files/issues/2765525-30-8.2.x.patch"
+                "https://www.drupal.org/files/issues/2765525-30-8.2.x.patch",
+                "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
+                "https://www.drupal.org/files/issues/1356276-276-8.2.x.patch"
             },
             "drupal/entity_embed": {
                 "2832504 - Send the CKEditor instance ID to the embed.preview route":
@@ -112,7 +121,7 @@
     "require": {
         "cweagans/composer-patches": "^1.5.0",
         "composer/installers": "^1.0",
-        "drupal/core": "^8.2.0",
+        "drupal/core": "8.2.7",
         "drupal/embed": "^1.0",
         "drupal/entity_embed": "1.0.0-beta2",
         "drupal/media_entity": "^1.0",
@@ -120,10 +129,10 @@
         "drupal/media_entity_twitter": "^1.3",
         "drupal/media_entity_image": "^1.0",
         "drupal/ctools": "3.0.0-alpha27",
-        "drupal/panels": "3.0.0-beta5",
+        "drupal/panels": "3.0.0-beta6",
         "drupal/page_manager": "1.0.0-alpha24",
-        "drupal/panelizer": "3.0.0-alpha3",
-        "drupal/scheduled_updates": "1.0.0-alpha5",
+        "drupal/panelizer": "3.0.0-beta1",
+        "drupal/scheduled_updates": "1.0.0-alpha6",
         "drupal/workbench_moderation": "1.2.0",
         "drupal/acquia_connector": "^1.1",
         "drupal/config_update": "^1.1",
@@ -148,6 +157,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Acquia\\Lightning\\": "src",
             "Acquia\\LightningExtension\\": "src/LightningExtension"
         }
     }

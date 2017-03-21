@@ -1,12 +1,12 @@
-uuid: 43b96afc-e3c7-404e-9420-0aa48cbbf341
+uuid: ff632746-9257-4b51-b78c-62e663d595ce
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.scheduled_update.multiple_node_embargo.field_moderation_state_1
+    - field.field.scheduled_update.multiple_node_embargo.field_moderation_state
     - scheduled_updates.scheduled_update_type.multiple_node_embargo
 _core:
-  default_config_hash: ZAV1-GsrgfgbGgCExjM3beN7HSzf8Nz4gIhvgUXXk5s
+  default_config_hash: 8Ci0xvIWHludoRjuvCBvNuQiY1HCE0FNypafiC0l8Oc
 id: scheduled_update.multiple_node_embargo.default
 targetEntityType: scheduled_update
 bundle: multiple_node_embargo
@@ -20,7 +20,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-  field_moderation_state_1:
+  field_moderation_state:
     type: options_select
     weight: 0
     settings: {  }

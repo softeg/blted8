@@ -1,9 +1,8 @@
-uuid: 6e1effe2-e269-4f9b-9217-cebb73955ed5
+uuid: fb8cd36d-fd81-4c31-ba4a-bb941726c62d
 langcode: en
 status: true
 dependencies:
   module:
-    - lightning_workflow
     - node
     - user
 _core:
@@ -638,7 +637,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'latest revision'
-          required: true
+          required: false
           plugin_id: standard
       show_admin_links: false
       filter_groups:
@@ -656,6 +655,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       max-age: 0
@@ -687,6 +687,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       max-age: 0

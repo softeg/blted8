@@ -1,16 +1,16 @@
-uuid: 6ad0fc51-af55-4def-a89a-db11723117c1
+uuid: 4df2eae0-492d-4674-9d25-8dbaeb6412c4
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 1AjkKxoHr2Sd_boRxflqaKpHWPKFz6xTjIwydwfIeF4
+  default_config_hash: cNNH-3h3juH4in8OIaLh_RERuUAmYpQsAkW1ExEOEl4
 id: multiple_node_embargo
 label: 'Publish multiple nodes at a certain time'
 update_entity_type: node
 update_types_supported:
   - independent
 field_map:
-  field_moderation_state_1: moderation_state
+  field_moderation_state: moderation_state
 update_runner:
   id: default_independent
   after_run: DELETE

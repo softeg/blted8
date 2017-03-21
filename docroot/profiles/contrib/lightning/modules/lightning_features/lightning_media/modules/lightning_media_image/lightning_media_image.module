@@ -8,6 +8,16 @@
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\field\Entity\FieldConfig;
+use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\lightning_media_image\Plugin\MediaEntity\Type\Image;
+
+/**
+ * Implements hook_media_entity_type_info_alter().
+ */
+function lightning_media_image_media_entity_type_info_alter(array &$types) {
+  $types['image']['input_match']['field_types'] = ['image'];
+  Override::pluginClass($types['image'], Image::class);
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().

@@ -1,4 +1,4 @@
-uuid: 1584d6a9-63f2-4bfb-b5f2-639c9a6df8bf
+uuid: d94bf5b6-ef2a-421a-b873-0b1cb5371ea1
 langcode: en
 status: true
 dependencies: {  }
@@ -10,6 +10,7 @@ permissions:
   - 'access content overview'
   - 'edit any landing_page content'
   - 'delete any landing_page content'
+  - 'view moderation states'
   - 'use draft_published transition'
   - 'use needs_review_draft transition'
   - 'use needs_review_published transition'

@@ -107,13 +107,16 @@ class ScheduledUpdateTypeForm extends ScheduledUpdateTypeBaseForm {
     $status = parent::doSave($form, $form_state);
     $clone_field = $form_state->getValue('clone_field');
 
-    if ($clone_field != 'multiple-field') {
-      $multi_field = FALSE;
-      $this->cloneSingleField($this->entity->getUpdateEntityType(), $clone_field, $form_state);
+    $multi_field = FALSE;
+    if ($clone_field) {
+      if ($clone_field != 'multiple-field') {
+        $this->cloneSingleField($this->entity->getUpdateEntityType(), $clone_field, $form_state);
+      }
+      else {
+        $multi_field = TRUE;
+      }
     }
-    else {
-      $multi_field = TRUE;
-    }
+
 
     switch ($status) {
       case SAVED_NEW:

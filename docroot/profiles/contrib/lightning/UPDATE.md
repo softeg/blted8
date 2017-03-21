@@ -54,6 +54,37 @@ use. For example, if you are currently running Beta 1 and are trying to update
 to Beta 3, you will need to follow the instructions for updating from Beta 1 to
 Beta 2, then from Beta 2 to Beta 3, in that order.
 
+## 2.0.4 to 2.0.5
+There are no manual update instructions for 2.0.5.
+
+If you previously used the lightning.extend.yml file to customize your
+installation and you have a need to continuously install your application (for
+example, in an Acquia Cloud Site Factory instance) you will need to convert your
+extend file into a sub-profile of Lightning. See the
+[Lightning as a base profile][sub-profile documentation] documentation for more
+information.
+
+## 2.0.3 to 2.0.4
+* Edit the **Scheduled update** field on any content type that has it. Click
+  **Field settings*, set "Allowed number of values" to "Unlimited" and save.
+  Then click **Edit**, rename the field to "Scheduled updates", and save.
+* If you have the Image Browser entity browser available:
+  * Go to *Configuration > Content authoring > Entity browsers* and edit the
+    **Image Browser** entity browser.
+  * Click **Next**.
+  * Empty the "Width of the modal" and "Height of the modal" text fields.
+  * Click **Next**, then proceed through the rest of the wizard without changing
+    anything else. Then click **Finish** to save the entity browser.
+* If you have Lightning Workflow installed, add the *View moderation states*
+  permission to all content reviewer roles.
+* If you have Lightning Workflow installed, Go to *Structure > Views* and edit
+  the **Content** view.
+  * Expand the **Advanced** section and under **Relationships** click on 'latest
+    revision'.
+  * Un-check the "Require this relationship" checkbox and click **Apply (all
+    displays)**.
+  * Save the view.
+
 ## 2.0.2 to 2.0.3
 * If you have the Landing Page content type installed, there are several manual
   update steps (to be performed in order):
@@ -224,3 +255,5 @@ There are no manual update steps for this version.
 * Enable the ```view media``` permission for the ```anonymous``` and
   ```authenticated``` user roles.
 * Install the Lightning Workflow module.
+
+[sub-profile documentation]: https://github.com/acquia/lightning/wiki/Lightning-as-a-Base-Profile "Lightning sub-profile documentation"

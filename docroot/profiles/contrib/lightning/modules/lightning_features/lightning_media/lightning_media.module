@@ -5,13 +5,62 @@
  * Core media asset support for Lightning.
  */
 
+use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Asset\AttachedAssetsInterface;
-use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\field\Entity\FieldConfig;
+use Drupal\file\FileInterface;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\image\Plugin\ImageEffect\ResizeImageEffect;
 use Drupal\media_entity\MediaBundleInterface;
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function lightning_media_element_info_alter(array &$info) {
+  $info['entity_browser']['#after_build'][] = 'lightning_media_inject_entity_browser_count';
+}
+
+/**
+ * Validates a file through an entity browser widget.
+ *
+ * @param \Drupal\file\FileInterface $file
+ *   The file to validate.
+ * @param string $plugin_id
+ *   The widget plugin ID.
+ * @param array $configuration
+ *   Configuration for the widget plugin.
+ *
+ * @return string[]
+ *   An array of errors. If empty, the file passed validation.
+ */
+function lightning_media_validate_upload(FileInterface $file, $plugin_id, array $configuration = []) {
+  return \Drupal::service('plugin.manager.entity_browser.widget')
+    ->createInstance($plugin_id, $configuration)
+    ->validateFile($file);
+}
+
+/**
+ * Post-build callback for entity browser elements.
+ *
+ * This function injects the number of default values the entity browser has
+ * into its JavaScript settings so that several instances of an entity browser
+ * on a particular field can respect the field's cardinality. This is used by
+ * our special-sauce JavaScript in browser.js to ensure that you cannot select
+ * more entities than the cardinality will allow.
+ *
+ * @param array $element
+ *   The fully built element.
+ *
+ * @return array
+ *   The processed element.
+ */
+function lightning_media_inject_entity_browser_count(array $element) {
+  $settings = &$element['#attached']['drupalSettings']['entity_browser'];
+  $uuid = key($settings);
+  $settings[$uuid]['count'] = count($element['#default_value']);
+
+  return $element;
+}
 
 /**
  * Implements template_preprocess_image_style().
@@ -21,6 +70,7 @@ use Drupal\media_entity\MediaBundleInterface;
  */
 function lightning_media_preprocess_image_style(array &$variables) {
   $extension = pathinfo($variables['uri'], PATHINFO_EXTENSION);
+  $extension = Unicode::strtolower($extension);
 
   // If this is an SVG and we don't know its dimensions, try to calculate them
   // through the image style's effect chain.
@@ -63,6 +113,8 @@ function lightning_media_preprocess_image_style(array &$variables) {
     if ($dimensions['height']) {
       $variables['image']['#height'] = $dimensions['height'];
     }
+    // If at least one dimension is known, display the image.
+    $variables['image']['#access'] = $dimensions['width'] || $dimensions['height'];
   }
 }
 
@@ -93,36 +145,31 @@ function lightning_media_entity_type_alter(array &$entity_types) {
  * Implements hook_ENTITY_TYPE_insert().
  */
 function lightning_media_media_bundle_insert(MediaBundleInterface $bundle) {
-  /** @var \Drupal\field\Entity\FieldConfig $field */
-  $field = FieldConfig::create([
-    'field_name' => 'field_media_in_library',
-    'entity_type' => 'media',
-    'bundle' => $bundle->id(),
-  ]);
-
-  $t = \Drupal::translation();
-  $field
-    ->setSetting('on_label', $t->translate('Saved to my media library'))
-    ->setSetting('off_label', $t->translate('Not in my media library'))
-    ->setLabel($t->translate('Save to my media library'))
-    ->setDefaultValue(TRUE)
+  \Drupal::entityTypeManager()
+    ->getStorage('field_config')
+    ->create([
+      'field_name' => 'field_media_in_library',
+      'entity_type' => 'media',
+      'bundle' => $bundle->id(),
+      'label' => t('Save to my media library'),
+      'settings' => [
+        'on_label' => t('Saved to my media library'),
+        'off_label' => t('Not in my media library'),
+      ],
+      'default_value' => [
+        ['value' => TRUE],
+      ],
+    ])
     ->save();
 
-  $form_display = EntityFormDisplay::load('media.' . $bundle->id() . '.default');
-  if (empty($form_display)) {
-    $form_display = EntityFormDisplay::create([
-      'targetEntityType' => 'media',
-      'bundle' => $bundle->id(),
-      'mode' => 'default',
-      'status' => TRUE,
-    ]);
-  }
-  $form_display->setComponent('field_media_in_library', [
-    'type' => 'boolean_checkbox',
-    'settings' => [
-      'display_label' => TRUE,
-    ],
-  ])->save();
+  entity_get_form_display('media', $bundle->id(), 'default')
+    ->setComponent('field_media_in_library', [
+      'type' => 'boolean_checkbox',
+      'settings' => [
+        'display_label' => TRUE,
+      ],
+    ])
+    ->save();
 }
 
 /**

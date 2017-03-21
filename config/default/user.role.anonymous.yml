@@ -1,4 +1,4 @@
-uuid: 72e3f8cb-1753-409f-91d2-80585a303e83
+uuid: 3635901c-27d5-415d-ae50-7ecbb5c61954
 langcode: en
 status: true
 dependencies: {  }
@@ -10,5 +10,5 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'access site-wide contact form'
   - 'view media'
+  - 'access site-wide contact form'

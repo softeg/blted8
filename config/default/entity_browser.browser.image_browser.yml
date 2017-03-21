@@ -1,4 +1,4 @@
-uuid: 55a43946-f0ca-425b-859b-cf1cca338870
+uuid: af74af4e-849f-4903-9f95-73f64646386d
 langcode: en
 status: true
 dependencies:
@@ -8,13 +8,13 @@ dependencies:
     - lightning_media
     - views
 _core:
-  default_config_hash: xipKT5leVqIkooIB1BdbwmJTd9VbDhbdTGU0iIRskA4
+  default_config_hash: CtX33aXTrSjk88TmWW-MLn2cIfuBbj-k7y8XHFs5Nsw
 name: image_browser
 label: 'Image Browser'
 display: modal
 display_configuration:
-  width: '650'
-  height: '500'
+  width: ''
+  height: ''
   link_text: 'Select Image(s)'
   auto_open: false
 selection_display: no_display
@@ -25,6 +25,7 @@ widgets:
   44d52e51-9627-43b5-a637-3b0462041d1c:
     settings:
       submit_text: Select
+      form_mode: media_browser
       return_file: true
     uuid: 44d52e51-9627-43b5-a637-3b0462041d1c
     weight: -9

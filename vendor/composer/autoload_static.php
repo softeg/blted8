@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04
+class ComposerStaticInitc9ad65d72a263c5d55e457ac3e7b5fbd
 {
     public static $files = array (
         '32dcc8afd4335739640db7d200c1971d' => __DIR__ . '/..' . '/symfony/polyfill-apcu/bootstrap.php',
@@ -129,6 +129,7 @@ class ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04
         ),
         'A' => 
         array (
+            'Acquia\\Lightning\\' => 17,
             'Acquia\\LightningExtension\\' => 26,
             'Acquia\\Blt\\Tests\\' => 17,
             'Acquia\\Blt\\' => 11,
@@ -372,6 +373,10 @@ class ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
+        'Acquia\\Lightning\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src',
+        ),
         'Acquia\\LightningExtension\\' => 
         array (
             0 => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension',
@@ -547,10 +552,15 @@ class ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04
         'Acquia\\Blt\\Update\\Updater' => __DIR__ . '/..' . '/acquia/blt/src/Update/Updater.php',
         'Acquia\\Blt\\Update\\Updates' => __DIR__ . '/..' . '/acquia/blt/src/Update/Updates.php',
         'Acquia\\LightningExtension\\Context\\BlockContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/BlockContext.behat.inc',
+        'Acquia\\LightningExtension\\Context\\CkEditorContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/CkEditorContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\DisplayModeContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/DisplayModeContext.behat.inc',
+        'Acquia\\LightningExtension\\Context\\EntityBrowserContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/EntityBrowserContext.behat.inc',
+        'Acquia\\LightningExtension\\Context\\FieldApiContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/FieldApiContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\PanelsInPlaceContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/PanelsInPlaceContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\UndoContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/UndoContext.behat.inc',
         'Acquia\\LightningExtension\\Context\\UtilityContext' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/LightningExtension/Context/UtilityContext.behat.inc',
+        'Acquia\\Lightning\\Composer\\ReleaseVersion' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/Composer/ReleaseVersion.php',
+        'Acquia\\Lightning\\IniEncoder' => __DIR__ . '/../..' . '/docroot/profiles/contrib/lightning/src/IniEncoder.php',
         'AdhocTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/system/AdhocTask.php',
         'AdhocTaskdefTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/system/AdhocTaskdefTask.php',
         'AdhocTypedefTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/system/AdhocTypedefTask.php',
@@ -6460,10 +6470,10 @@ class ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd11a2abc0fce0ffcafc4c57f544acf04::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc9ad65d72a263c5d55e457ac3e7b5fbd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc9ad65d72a263c5d55e457ac3e7b5fbd::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc9ad65d72a263c5d55e457ac3e7b5fbd::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitc9ad65d72a263c5d55e457ac3e7b5fbd::$classMap;
 
         }, null, ClassLoader::class);
     }
