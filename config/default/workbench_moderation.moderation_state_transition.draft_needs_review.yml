@@ -1,0 +1,14 @@
+uuid: 797438c1-fe80-4a8f-b5e3-c0adb630f963
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.draft
+    - workbench_moderation.moderation_state.needs_review
+_core:
+  default_config_hash: p6eas0aLuO28hEMmbcOu_2s8Ht7xJpvkVP5ihosF0KI
+id: draft_needs_review
+label: 'Request Review'
+stateFrom: draft
+stateTo: needs_review
+weight: -10
