@@ -1,0 +1,11 @@
+uuid: c3a8a7d2-f34e-400a-a800-20b2a67551f9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: O0NfJbzQmkMg1brwA-gUw8v59V0Ana1YKTeRfb-okGI
+id: user
+label: User
+tags:
+  title: '[user:name] | [site:name]'
+  description: '[site:name]'

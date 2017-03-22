@@ -1,0 +1,11 @@
+uuid: 664762ee-7cd9-4d78-ac26-1cea5e970de6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ydpmSCtxLjO9xqkBxObkeYx0Bf2dkW-d8bB_6Q1Ggjs
+id: node
+label: Content
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:summary]'
