@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Contains installation and update routines for Lightning Workflow.
+ */
+
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_install().
+ */
+function lightning_workflow_install() {
+  // Set up content type-specific permissions.
+  lightning_workflow_update_8001();
+
+  // Give content reviewers the ability to view moderation states, e.g. in the
+  // administrative list of content.
+  \Drupal::service('lightning.content_roles')
+    ->grantPermissions('reviewer', ['view moderation states']);
+}
+
+/**
+ * Applies workflow permissions to content management roles.
+ */
+function lightning_workflow_update_8001() {
+  $node_types = NodeType::loadMultiple();
+  array_walk($node_types, 'lightning_workflow_node_type_insert');
+}
+
+/**
+ * Clears the entity type definition cache.
+ */
+function lightning_workflow_update_8002() {
+  \Drupal::entityTypeManager()->clearCachedDefinitions();
+}
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function lightning_workflow_update_dependencies() {
+  return [
+    'lightning_workflow' => [
+      8001 => [
+        'lightning' => 8002,
+      ],
+    ],
+  ];
+}

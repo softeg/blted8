@@ -1,0 +1,13 @@
+uuid: a161f5da-89c0-407a-bd89-1baf22c8014a
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.draft
+_core:
+  default_config_hash: PlP9tjzxwj2pY25wmi8m3UGiipeTRn8m93sBBqFoK8o
+id: draft_draft
+label: 'Create New Draft'
+stateFrom: draft
+stateTo: draft
+weight: -11
