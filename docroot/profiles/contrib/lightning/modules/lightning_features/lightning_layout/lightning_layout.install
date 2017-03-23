@@ -1,0 +1,140 @@
+<?php
+
+/**
+ * @file
+ * Contains installation and update routines for Lightning Layout.
+ */
+
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_install().
+ */
+function lightning_layout_install() {
+  // Set up layout_manager permissions.
+  lightning_layout_update_8003();
+
+  // Add layout permissions to Lightning Core's content role configuration.
+  lightning_layout_update_8005();
+}
+
+/**
+ * Installs Panelizer and default configuration for landing page content type.
+ */
+function lightning_layout_update_8001() {
+  \Drupal::service('module_installer')->install(['panelizer']);
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'lightning_layout');
+}
+
+/**
+ * Creates the layout_manager role.
+ */
+function lightning_layout_update_8002() {
+  \Drupal::service('lightning.config_helper')
+    ->install('lightning_layout')
+    ->createEntity('user_role', 'layout_manager');
+}
+
+/**
+ * Adds Panelizer permissions to layout_manager role.
+ */
+function lightning_layout_update_8003() {
+  $node_types = NodeType::loadMultiple();
+  array_walk($node_types, 'lightning_layout_node_type_insert');
+}
+
+/**
+ * Removed in Lightning 8.x-2.05.
+ *
+ * Formerly installed Panelizer defaults for the landing_page content type.
+ *
+ * @deprecated
+ */
+function lightning_layout_update_8004() {
+}
+
+/**
+ * Adds Panels and Panelizer permissions to content roles.
+ */
+function lightning_layout_update_8005() {
+  \Drupal::service('lightning.content_roles')
+    ->grantPermissions('creator', [
+      'access panels in-place editing',
+      'change layouts in place editing',
+      'administer panelizer node ? content',
+      'administer panelizer node ? layout',
+    ]);
+}
+
+/**
+ * Removes administrative privileges from layout_manager role.
+ */
+function lightning_layout_update_8006() {
+  $role_storage = \Drupal::entityTypeManager()->getStorage('user_role');
+
+  /** @var \Drupal\user\RoleInterface[] $roles */
+  $roles = $role_storage->loadByProperties([
+    'is_admin' => TRUE,
+  ]);
+  $keys = array_keys($roles);
+  sort($keys);
+  if ($keys == ['administrator', 'layout_manager']) {
+    $roles['layout_manager']
+      ->setIsAdmin(FALSE)
+      // grantPermission() has no effect on administrative roles -- the grant
+      // is literally tossed into the big storage backend in the sky. This, in
+      // my opinion, is the absolute stupidest thing in core -- it's deliberate
+      // data loss!! Sigh...but anyway...having stripped layout_manager of its
+      // administrative status, we now need to ensure it has all the permissions
+      // that it would have out of the box.
+      ->grantPermission('administer node display')
+      ->grantPermission('administer panelizer')
+      ->save();
+
+    lightning_layout_update_8003();
+  }
+}
+
+/**
+ * Creates Lightning Layout settings config object and installs Entity Blocks.
+ */
+function lightning_layout_update_8007() {
+  $id = 'lightning_layout.settings';
+
+  $values = \Drupal::service('lightning.config_helper')
+    ->install('lightning_layout')
+    ->read($id);
+
+  \Drupal::configFactory()
+    ->getEditable($id)
+    ->setData($values)
+    ->save();
+
+  \Drupal::service('module_installer')->install(['entity_block']);
+}
+
+
+/**
+ * Installs the Panelizer Quick Edit module.
+ */
+function lightning_layout_update_8008() {
+  \Drupal::service('module_installer')->install(['panelizer_quickedit']);
+}
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function lightning_layout_update_dependencies() {
+  return [
+    'lightning_layout' => [
+      8003 => [
+        'lightning' => 8002,
+      ],
+      // 8005 requires the lightning_core.settings config object, which is
+      // created by lightning_core 8001.
+      8005 => [
+        'lightning_core' => 8001,
+      ],
+    ],
+  ];
+}
