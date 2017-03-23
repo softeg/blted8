@@ -1,5 +1,10 @@
 <?php
 
+// ===== Added by acsf-init, please do not delete. Section start. =====
+include dirname(__FILE__) . '/acsf.settings.php';
+// ===== Added by acsf-init, please do not delete. Section end. =====
+
+
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -753,3 +758,5 @@ $settings['file_scan_ignore_directories'] = [
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
+$settings['install_profile'] = 'lightning';
