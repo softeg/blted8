@@ -106,7 +106,7 @@ if (file_exists('/usr/local/drush8/commands')) {
 # $options['shell-aliases']['pm-clone'] = 'pm-download --gitusername=YOURUSERNAME --package-handler=git_drupalorg';
 
 // Load a drushrc.php configuration file from the current working directory.
-# $options['config'][] = './drushrc.php';
+$options['config'][] = realpath(__DIR__ . '/../vendor/acquia/blt/drush/drushrc.php');
 
 /**
  * By default, Drush will download projects compatible with the current
