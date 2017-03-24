@@ -1,0 +1,14 @@
+uuid: 861a9b4e-3680-4fab-9539-06d2ca2a4c90
+name: 'BLTed 8'
+mail: no-reply@acquia.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
