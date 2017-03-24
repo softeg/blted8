@@ -1,0 +1,21 @@
+uuid: 9bfebb70-60ad-48bf-bb83-2924f8a10a02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_mime_type
+    - media_entity.bundle.document
+_core:
+  default_config_hash: 3WgtL5n9p5mfqwgj-gvGr4pUDprXs1m7zxHHk99rtKQ
+id: media.document.field_mime_type
+field_name: field_mime_type
+entity_type: media
+bundle: document
+label: 'MIME Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

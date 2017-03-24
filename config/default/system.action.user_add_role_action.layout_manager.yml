@@ -1,0 +1,14 @@
+uuid: b61461fd-655e-4126-af4e-c6f62473c1cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.layout_manager
+  module:
+    - user
+id: user_add_role_action.layout_manager
+label: 'Add the Layout manager role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: layout_manager
