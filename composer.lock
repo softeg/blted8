@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "516c19c5ad28dba849b7716b98247834",
+    "content-hash": "ae64ef68388d236f5cdc42f60c6a855a",
     "packages": [
         {
             "name": "acquia/blt",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/blt.git",
-                "reference": "6936f3067d4bcee08774a320434f247af4a64ce9"
+                "reference": "889bb511b89a2e77c02224f01499bad1f5839abf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/blt/zipball/6936f3067d4bcee08774a320434f247af4a64ce9",
-                "reference": "6936f3067d4bcee08774a320434f247af4a64ce9",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/889bb511b89a2e77c02224f01499bad1f5839abf",
+                "reference": "889bb511b89a2e77c02224f01499bad1f5839abf",
                 "shasum": ""
             },
             "require": {
@@ -79,7 +79,7 @@
                 "template",
                 "testing"
             ],
-            "time": "2017-03-24 23:28:40"
+            "time": "2017-03-25 22:18:37"
         },
         {
             "name": "acquia/lightning",
@@ -10346,16 +10346,16 @@
         },
         {
             "name": "geerlingguy/drupal-vm",
-            "version": "4.3.1",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geerlingguy/drupal-vm.git",
-                "reference": "c583688403fd770299aa1516e8bd416243b6cc52"
+                "reference": "281c318d0f8958d91e745fda36820d9567c0f837"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/c583688403fd770299aa1516e8bd416243b6cc52",
-                "reference": "c583688403fd770299aa1516e8bd416243b6cc52",
+                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/281c318d0f8958d91e745fda36820d9567c0f837",
+                "reference": "281c318d0f8958d91e745fda36820d9567c0f837",
                 "shasum": ""
             },
             "type": "vm",
@@ -10381,7 +10381,7 @@
                 "virtual machine",
                 "vm"
             ],
-            "time": "2017-03-13T22:18:19+00:00"
+            "time": "2017-03-25T03:18:11+00:00"
         },
         {
             "name": "instaclick/php-webdriver",
